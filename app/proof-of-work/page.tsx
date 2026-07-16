@@ -1,14 +1,94 @@
 import type { Metadata } from "next";
 import Button from "@/app/components/Button";
 import Todo from "@/app/components/Todo";
-import PhotoPlaceholder from "@/app/components/PhotoPlaceholder";
-import AppScreenshot from "@/app/components/AppScreenshot";
+import Image from "next/image";
+import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import FlowSteps from "@/app/components/FlowSteps";
+import CaseStudySection from "@/app/components/CaseStudySection";
+import WorkCard from "@/app/components/WorkCard";
 import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "Proof of Work — Kezia Lim",
 };
+
+type OverviewItem = {
+  label: string;
+  title: string;
+  description: string;
+  assetName: string;
+  imageDescription: string;
+  imageSrc?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  ctaLabel: string;
+  ctaHref: string;
+};
+
+const overview: OverviewItem[] = [
+  {
+    label: "Flagship Product",
+    title: "BECOME",
+    description:
+      "An AI reflection companion designed to help people notice who they are becoming.",
+    assetName: "become-phone-mockup-triptych.jpg",
+    imageDescription: "Three phone screens of BECOME on a warm surface",
+    imageSrc: "/images/become/become-phone-mockup-triptych.jpg",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    ctaLabel: "View Case Study",
+    ctaHref: "/proof-of-work#become",
+  },
+  {
+    label: "Transformation",
+    title: "AI-Assisted Public Services",
+    description:
+      "Redesigning high-volume workflows using human-centred AI and decision support.",
+    assetName: "public-services-workflow-diagram.jpg",
+    imageDescription: "Abstract, anonymised workflow diagram",
+    imageSrc: "/images/become/public-services-workflow-diagram.jpg",
+    imageWidth: 1693,
+    imageHeight: 929,
+    ctaLabel: "Explore the Approach",
+    ctaHref: "/proof-of-work#public-services",
+  },
+  {
+    label: "Builder Experiment",
+    title: "Appointment & Booking Assistant",
+    description: "A conversational assistant for scheduling and booking.",
+    assetName: "appointment-assistant-interface.jpg",
+    imageDescription: "Chat interface for an appointment-booking assistant",
+    imageSrc: "/images/become/appointment-assistant-interface.jpg",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    ctaLabel: "See Details",
+    ctaHref: "/proof-of-work#appointment-assistant",
+  },
+  {
+    label: "Builder Experiment",
+    title: "Chatbots & Internal Assistants",
+    description: "Internal tools built to remove repetitive team work.",
+    assetName: "internal-chatbot-interface.jpg",
+    imageDescription: "Internal assistant chat interface on a laptop screen",
+    imageSrc: "/images/become/internal-chatbot-interface.jpg",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    ctaLabel: "See Details",
+    ctaHref: "/proof-of-work#chatbots",
+  },
+  {
+    label: "Builder Experiment",
+    title: "Hackathon Prototypes",
+    description: "Fast, scrappy AI concepts built and tested under a clock.",
+    assetName: "hackathon-prototype-sketches.jpg",
+    imageDescription: "Sketches and sticky notes from a hackathon session",
+    imageSrc: "/images/become/hackathon-prototype-sketches.jpg",
+    imageWidth: 1536,
+    imageHeight: 1024,
+    ctaLabel: "See Details",
+    ctaHref: "/proof-of-work#hackathons",
+  },
+];
 
 const screenshots = [
   {
@@ -24,13 +104,6 @@ const screenshots = [
     height: 1012,
     alt: "BECOME onboarding with founder's message",
     caption: "Onboarding — the founder's own story, then straight into writing",
-  },
-  {
-    src: "/images/become/journal-entry.png",
-    width: 850,
-    height: 1004,
-    alt: "BECOME journal entry with inline AI reflection",
-    caption: "Journal Entry — write freely, BECOME reflects inline",
   },
   {
     src: "/images/become/patterns-dark.png",
@@ -55,184 +128,221 @@ const screenshots = [
   },
 ];
 
-const designDecisions = [
-  {
-    title: "The AI, not a coach",
-    body: "No advice, no direction. It asks the question that unlocks something in you, and trusts you to find your own answer.",
-  },
-  {
-    title: "Quiet by default",
-    body: "No clutter, no dashboards on empty states. Data visualisations only when there's data worth showing.",
-  },
-  {
-    title: "Mobile-first",
-    body: "Designed for the phone in your hand at the end of a long day.",
-  },
-  {
-    title: "What was left out",
-    body: "No social features, no habit tracking, no onboarding quiz, no therapist integrations. BECOME is not therapy, and doesn't pretend to be.",
-  },
-];
-
-const otherProjects = [
-  {
-    title: "Appointment AI / Booking Assistant",
-    todo: "challenge, approach, and impact details",
-  },
-  {
-    title: "Government AI Workflow Projects",
-    todo: "high-level description of scope and outcomes",
-  },
-  {
-    title: "Chatbot Builds",
-    todo: "which chatbots, for whom, and what they did",
-  },
-  {
-    title: "Hackathon Projects",
-    todo: "which hackathons, what was built, results",
-  },
-  {
-    title: "Future AI Products / Experiments",
-    todo: "what's currently in progress",
-  },
-];
-
 export default function ProofOfWorkPage() {
   return (
     <div className="px-6 py-20 sm:py-28">
-      <h1 className="mx-auto max-w-4xl font-serif text-4xl">Proof of Work</h1>
+      <div className="mx-auto max-w-4xl">
+        <h1 className="font-serif text-4xl">Proof of Work</h1>
+        <p className="mt-4 max-w-xl leading-relaxed text-muted">
+          A working record — one flagship product, and the experiments
+          alongside it.
+        </p>
+      </div>
 
-      {/* BECOME case study */}
-      <section id="become" className="mx-auto mt-16 max-w-4xl scroll-mt-24">
+      {/* Overview grid */}
+      <div className="mx-auto mt-16 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {overview.map((item) => (
+          <WorkCard key={item.title} {...item} />
+        ))}
+      </div>
+
+      {/* BECOME flagship case study */}
+      <section id="become" className="mx-auto mt-28 max-w-4xl scroll-mt-24">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Flagship Case Study
         </p>
         <h2 className="mt-3 font-serif text-3xl">BECOME</h2>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          An AI journal that helps people see who they are becoming while
-          they are still living it.
-        </p>
 
-        {/* Hero image */}
-        <div className="mt-10">
-          <PhotoPlaceholder aspect="wide" label="BECOME hero shot / product banner" />
-        </div>
-
-        {/* App screenshots */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">The Product</h3>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {screenshots.map((shot) => (
-              <AppScreenshot key={shot.src} {...shot} />
-            ))}
-          </div>
-        </div>
-
-        {/* Timeline */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">Timeline</h3>
-          <div className="mt-8">
-            <FlowSteps
-              steps={[
-                { icon: "📝", label: "PRD Written" },
-                { icon: "🌙", label: "Built Nights & Weekends" },
-                { icon: "🪞", label: "Founder-Led Personal Use" },
-                { icon: "🚀", label: "Live", sublabel: "3 weeks from PRD" },
-              ]}
+        <CaseStudySection number="01" title="Product Hero">
+          <div className="overflow-hidden rounded-2xl border border-border bg-surface">
+            <Image
+              src="/images/become/become-hero-product-banner.jpg"
+              width={1774}
+              height={887}
+              alt="BECOME product banner"
+              className="h-auto w-full"
+              priority
             />
           </div>
-        </div>
+        </CaseStudySection>
 
-        {/* Challenge */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">The Challenge</h3>
-          <p className="mt-4 leading-relaxed text-muted">
-            Most people are changing — growing, learning, struggling,
-            becoming — but they can&apos;t see it while it&apos;s happening.
-            Journals exist, but they&apos;re passive; they capture what
-            happened, not what it means. The person this needed to reach: The
-            Conscious Seeker, someone in their late 20s to 40s already doing
-            some version of self-reflection, but missing a single place to
-            make sense of it over time.
+        <CaseStudySection number="02" title="Overview & Role">
+          <p>
+            An AI journal that helps people see who they are becoming while
+            they are still living it. Founder, sole designer, and sole
+            builder — from spec to shipped product.
           </p>
-        </div>
+        </CaseStudySection>
 
-        {/* Design decisions */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">Design Decisions</h3>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            {designDecisions.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-border bg-surface p-6">
-                <p className="font-medium">{item.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <CaseStudySection number="03" title="The Challenge">
+          <p>
+            People are changing constantly, but rarely see it while it&apos;s
+            happening. Journals capture what happened, not what it means.
+          </p>
+        </CaseStudySection>
 
-        {/* Architecture */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">Architecture</h3>
-          <div className="mt-6 rounded-2xl border border-border bg-surface p-8">
-            <FlowSteps
-              steps={[
-                { icon: "📓", label: "Journal Entry", sublabel: "Next.js" },
-                { icon: "✨", label: "AI Reflection", sublabel: "Claude API" },
-                { icon: "🗄️", label: "Data & Auth", sublabel: "Supabase" },
-                { icon: "📊", label: "Analytics", sublabel: "PostHog" },
-              ]}
-            />
-          </div>
-        </div>
+        <CaseStudySection number="04" title="User Insight">
+          <p>
+            The Conscious Seeker: late 20s to 40s, already doing some version
+            of self-reflection, but missing a single place to make sense of
+            it over time. Not a beginner at self-work — missing the mirror.
+          </p>
+        </CaseStudySection>
 
-        {/* Results */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">Results &amp; Roadmap</h3>
-          <p className="mt-4 leading-relaxed text-muted">
+        <CaseStudySection number="05" title="Product Principles">
+          <ul className="space-y-2">
+            <li>Quiet by default — no clutter, no dashboards on empty states.</li>
+            <li>Mobile-first — designed for the phone at the end of a long day.</li>
+            <li>Data visualisations only when there&apos;s data worth showing.</li>
+          </ul>
+        </CaseStudySection>
+
+        <CaseStudySection number="06" title="PRD to Live">
+          <FlowSteps
+            steps={[
+              { icon: "📝", label: "PRD Written" },
+              { icon: "🌙", label: "Built Nights & Weekends" },
+              { icon: "🪞", label: "Founder-Led Personal Use" },
+              { icon: "🚀", label: "Live", sublabel: "3 weeks from PRD" },
+            ]}
+          />
+        </CaseStudySection>
+
+        <CaseStudySection number="07" title="Product Walkthrough">
+          <p>
+            Onboarding opens with the founder&apos;s own story, then straight
+            into a first journal prompt. Write freely, BECOME reflects
+            inline. After 5 entries, patterns surface. After 10, strengths
+            and blind spots are framed gently. After 4 weeks, the Inner
+            Compass becomes a living document.
+          </p>
+        </CaseStudySection>
+
+        <CaseStudySection number="08" title="AI Behaviour & Guardrails">
+          <p>
+            The AI doesn&apos;t give advice or direction. It&apos;s designed
+            as a wise, close friend who has been reading your journal for
+            years — asking the question that unlocks something, and trusting
+            you to find your own answer.
+          </p>
+        </CaseStudySection>
+
+        <CaseStudySection number="09" title="Deliberately Excluded">
+          <ul className="space-y-2">
+            <li>No social features — this isn&apos;t a place to perform reflection.</li>
+            <li>No habit tracking or productivity mechanics.</li>
+            <li>No onboarding quiz — the AI learns from what you write.</li>
+            <li>No therapist integrations — BECOME is not therapy.</li>
+          </ul>
+        </CaseStudySection>
+
+        <CaseStudySection number="10" title="Screens & Interactions">
+          <ScreenshotGallery
+            shots={screenshots}
+            fit="contain"
+            className="grid gap-4 sm:grid-cols-3"
+          />
+        </CaseStudySection>
+
+        <CaseStudySection number="11" title="Product System">
+          <FlowSteps
+            steps={[
+              { icon: "📓", label: "Journal Entry", sublabel: "Next.js" },
+              { icon: "✨", label: "AI Reflection", sublabel: "Claude API" },
+              { icon: "🗄️", label: "Data & Auth", sublabel: "Supabase" },
+              { icon: "📊", label: "Analytics", sublabel: "PostHog" },
+            ]}
+          />
+        </CaseStudySection>
+
+        <CaseStudySection number="12" title="Testing & Iteration">
+          <p>
+            Founder-led personal testing happened before anyone else touched
+            the product — including two days of after-hours debugging on the
+            Inner Compass feature that ended with reading what it had
+            written, and crying, because it was accurate.
+          </p>
+        </CaseStudySection>
+
+        <CaseStudySection number="13" title="Results & Current Goals">
+          <p>
             Near-term goal: 100 active users with weekly retention above
-            40%. Beyond that: a weekly reflection digest, guided prompts for
-            specific life chapters, exporting your journey as a document, and
-            eventually sharing entries with a trusted coach, therapist, or
-            partner.
+            40%.
           </p>
-        </div>
+        </CaseStudySection>
 
-        {/* Lessons learned */}
-        <div className="mt-16">
-          <h3 className="font-serif text-xl">Lessons Learned</h3>
-          <p className="mt-4 leading-relaxed text-muted">
-            The single biggest risk was always that the AI&apos;s reflections
-            would feel generic instead of genuinely insightful — which is why
-            founder-led personal testing happened before anyone else touched
-            the product, including two days of after-hours debugging on the
-            Inner Compass feature that ended with reading what it had written
-            and crying, because it was accurate. Fourteen years of building
-            other people&apos;s products taught me these things take months.
-            This one didn&apos;t — proof, mostly to myself, that I could
-            still move like that for something of my own.
+        <CaseStudySection number="14" title="Lessons for Client Work">
+          <p>
+            Every decision in BECOME — down to what the AI is not allowed to
+            do — is a decision I now bring into client work: what makes
+            people trust an AI, and what makes them abandon it.
           </p>
-        </div>
+        </CaseStudySection>
+
+        <CaseStudySection number="15" title="Roadmap">
+          <p>
+            A weekly reflection digest, guided prompts for specific life
+            chapters, exporting your journey as a document, and eventually
+            sharing entries with a trusted coach, therapist, or partner.
+          </p>
+        </CaseStudySection>
       </section>
 
-      {/* Other Projects */}
-      <section className="mx-auto mt-24 max-w-4xl border-t border-border/80 pt-16">
-        <h2 className="font-serif text-3xl">Other Projects</h2>
-        <p className="mt-3 text-sm text-muted">
-          Each entry follows: Challenge → Approach → Impact
+      {/* AI-Assisted Public Services */}
+      <section id="public-services" className="mx-auto mt-28 max-w-4xl scroll-mt-24 border-t border-border/80 pt-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-accent">
+          Transformation
+        </p>
+        <h2 className="mt-3 font-serif text-3xl">AI-Assisted Public Services</h2>
+        <p className="mt-4 leading-relaxed text-muted">
+          Designed AI-assisted workflows to reduce manual document review,
+          streamline citizen-facing services, and improve decision-making
+          across high-volume government processes.
+        </p>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
+          <Image
+            src="/images/become/public-services-workflow-diagram.jpg"
+            width={1693}
+            height={929}
+            alt="Abstract, anonymised workflow diagram — no confidential details"
+            className="h-auto w-full"
+          />
+        </div>
+        <p className="mt-6 text-sm">
+          <Todo>government/enterprise client name (confidentiality permitting)</Todo>
+        </p>
+      </section>
+
+      {/* Builder experiments */}
+      <section id="experiments" className="mx-auto mt-28 max-w-4xl scroll-mt-24 border-t border-border/80 pt-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-accent">
+          Builder Experiments
+        </p>
+        <h2 className="mt-3 font-serif text-3xl">Rapid AI Prototypes</h2>
+        <p className="mt-4 max-w-xl leading-relaxed text-muted">
+          From appointment assistants to workflow automation — practical AI
+          concepts built and tested quickly.
         </p>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {otherProjects.map((project) => (
-            <div
-              key={project.title}
-              className="rounded-lg border border-border bg-surface p-6"
-            >
-              <h3 className="font-medium">{project.title}</h3>
-              <div className="mt-3">
-                <Todo>{project.todo}</Todo>
-              </div>
-            </div>
-          ))}
+        <div id="appointment-assistant" className="mt-12 scroll-mt-24 rounded-2xl border border-border p-6">
+          <h3 className="font-medium">Appointment & Booking Assistant</h3>
+          <div className="mt-3">
+            <Todo>challenge, approach, and impact details</Todo>
+          </div>
+        </div>
+
+        <div id="chatbots" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
+          <h3 className="font-medium">Chatbots & Internal Assistants</h3>
+          <div className="mt-3">
+            <Todo>which chatbots, for whom, and what they did</Todo>
+          </div>
+        </div>
+
+        <div id="hackathons" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
+          <h3 className="font-medium">Hackathon Prototypes</h3>
+          <div className="mt-3">
+            <Todo>which hackathons, what was built, results</Todo>
+          </div>
         </div>
       </section>
 

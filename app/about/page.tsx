@@ -1,79 +1,111 @@
 import type { Metadata } from "next";
 import Button from "@/app/components/Button";
+import FlowSteps from "@/app/components/FlowSteps";
+import ImageCopySplit from "@/app/components/ImageCopySplit";
+import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "About — Kezia Lim",
 };
 
+const career = [
+  { icon: "🏭", label: "ERP" },
+  { icon: "🏠", label: "Property Tech" },
+  { icon: "🌏", label: "Regional Product" },
+  { icon: "🤖", label: "Enterprise AI" },
+  { icon: "🏛️", label: "Government" },
+  { icon: "🧭", label: "BECOME" },
+];
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
-      <h1 className="font-serif text-4xl">I Didn&apos;t Start in AI</h1>
+    <>
+      {/* Opening statement */}
+      <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28">
+        <h1 className="font-serif text-4xl leading-tight sm:text-5xl">
+          I didn&apos;t start in AI. I started by solving operational
+          problems.
+        </h1>
+        <p className="mt-6 max-w-xl leading-relaxed text-muted">
+          Teams weren&apos;t struggling because they lacked technology. They
+          were struggling because their processes were fragmented and hard
+          to use. AI became the tool that let me redesign how people
+          interact with systems, instead of just patching around them.
+        </p>
+      </section>
 
-      <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted">
-        <p>I started by solving operational problems.</p>
-        <p>
-          Across more than a decade in product and digital transformation, I
-          kept running into the same pattern: teams weren&apos;t struggling
-          because they lacked technology. They were struggling because their
-          processes were complicated, fragmented, and hard to actually use.
-          AI became the tool that finally let me fix that properly — not
-          because it was new, but because it let me redesign how people
-          interact with systems instead of just patching around them.
-        </p>
-      </div>
+      {/* Career timeline */}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted">
+            14+ Years
+          </p>
+          <div className="mt-8">
+            <FlowSteps steps={career} />
+          </div>
+        </div>
+      </section>
 
-      <h2 className="mt-16 font-serif text-2xl">Why AI</h2>
-      <p className="mt-4 text-lg leading-relaxed text-muted">
-        Not because it&apos;s trending. Because it&apos;s the first real
-        chance to rebuild how people and systems interact from the ground up,
-        instead of adding another layer on top of the old way.
-      </p>
+      {/* Why I build this way */}
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <ImageCopySplit
+          eyebrow="Why AI"
+          title="Why I build this way"
+          body="Not because it's trending. Because it's the first real chance to rebuild how people and systems interact from the ground up, instead of adding another layer on top of the old way."
+          assetName="product-notes-sketches.jpg"
+          imageDescription="Hands sketching a product flow on paper, desk overhead angle"
+          imageAspect="video"
+          imageSrc="/images/become/product-notes-sketches.jpg"
+          imageWidth={1536}
+          imageHeight={1024}
+        />
+      </section>
 
-      <h2 className="mt-16 font-serif text-2xl">Why BECOME Exists</h2>
-      <div className="mt-4 space-y-6 text-lg leading-relaxed text-muted">
-        <p>
-          While I was helping organisations transform digitally, I noticed
-          the same gap showing up in people, not just processes: most of us
-          don&apos;t have a reliable way to actually understand ourselves —
-          our patterns, our blind spots, what we&apos;re actually working
-          toward.
-        </p>
-        <p>
-          At 37, after years of imperfect journaling — some of it
-          consistent, most of it not, mostly written on solo trips when I
-          finally had the quiet to sit with a question — I found something I
-          didn&apos;t expect looking back at every choice I&apos;d made: no
-          regrets, and a much clearer sense of what actually makes me happy.
-        </p>
-        <p>
-          That process is what BECOME is built from. Not theory — lived
-          truth. Every design decision I make there teaches me something I
-          bring straight back into consulting work: what makes people trust
-          an AI, what makes them abandon it, what &quot;helpful&quot;
-          actually feels like versus what it looks like on a slide.
-        </p>
-      </div>
+      {/* BECOME founder story */}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-5xl px-6 py-24">
+          <ImageCopySplit
+            eyebrow="Why BECOME Exists"
+            title="Built from lived truth, not theory"
+            body="At 37, after years of imperfect journaling, I found something I didn't expect: no regrets, and a much clearer sense of what actually makes me happy. Every decision in BECOME teaches me something I bring back into client work."
+            assetName="solo-trip-journaling-notebook.jpg"
+            imageDescription="Notebook and coffee on a table, travel setting, no visible face"
+            imageAspect="video"
+            imageSrc="/images/become/solo-trip-journaling-notebook.jpg"
+            imageWidth={1672}
+            imageHeight={941}
+            reverse
+          />
+        </div>
+      </section>
 
-      <h2 className="mt-16 font-serif text-2xl">Outside Work</h2>
-      <div className="mt-4 space-y-6 text-lg leading-relaxed text-muted">
-        <p>
-          Outside of technology, you&apos;ll usually find me training Muay
-          Thai, running, or travelling.
-        </p>
-        <p>
-          None of that is separate from the work. Muay Thai in particular has
-          hammered in the same lesson I try to apply to every product I
-          build: progress comes from consistency, not from perfection. You
-          don&apos;t get better by getting one session exactly right. You get
-          better by showing up correctly, repeatedly, and paying attention to
-          what breaks down when you&apos;re tired.
-        </p>
-      </div>
+      {/* Personal discipline */}
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <ImageCopySplit
+          eyebrow="Outside Work"
+          title="Muay Thai, running, and consistency"
+          body="Progress comes from consistency, not perfection. You don't get better by getting one session exactly right — you get better by showing up repeatedly, and paying attention to what breaks down when you're tired. The same lesson applies to every product I build."
+          assetName="muay-thai-wraps-running-shoes-desk.jpg"
+          imageDescription="Muay Thai hand wraps and running shoes beside a work desk"
+          imageAspect="video"
+          imageSrc="/images/become/muay-thai-wraps-running-shoes-desk.jpg"
+          imageWidth={1536}
+          imageHeight={1024}
+        />
+      </section>
 
-      <div className="mt-16">
-        <Button href="/consulting">Work With Me</Button>
-      </div>
-    </div>
+      {/* Current focus */}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+          <p className="font-serif text-2xl italic">
+            Right now: growing BECOME, and bringing what it teaches me
+            straight into client work.
+          </p>
+          <div className="mt-10">
+            <Button href="/consulting">{site.workWithMeLabel}</Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

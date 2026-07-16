@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import ImagePlaceholder from "@/app/components/ImagePlaceholder";
+import InsightCard from "@/app/components/InsightCard";
 import { insightsPosts } from "@/app/lib/site";
 
 export const metadata: Metadata = {
-  title: "Insights — Kezia Lim",
+  title: "Field Notes — Kezia Lim",
 };
 
 const moreTopics = [
@@ -17,40 +20,94 @@ const moreTopics = [
 ];
 
 export default function InsightsPage() {
+  const [featured, ...rest] = insightsPosts;
+
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
-      <h1 className="font-serif text-4xl">Insights</h1>
-      <p className="mt-4 text-lg leading-relaxed text-muted">
-        Founder-diary voice — short, specific, honest. Lessons and
-        observations, not advice-dispensing.
-      </p>
-
-      <div className="mt-12 divide-y divide-border">
-        {insightsPosts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/insights/${post.slug}`}
-            className="block py-6 first:pt-0"
-          >
-            <h2 className="font-serif text-2xl group-hover:text-accent">
-              {post.title}
-            </h2>
-            <p className="mt-2 text-muted">{post.teaser}</p>
-          </Link>
-        ))}
-      </div>
-
-      <section className="mt-16 border-t border-border/80 pt-12">
-        <h2 className="font-serif text-2xl">More Topics, Coming Soon</h2>
-        <ul className="mt-6 space-y-3 text-muted">
-          {moreTopics.map((topic) => (
-            <li key={topic} className="flex gap-3">
-              <span className="text-accent">—</span>
-              <span>{topic}</span>
-            </li>
-          ))}
-        </ul>
+    <>
+      <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
+        <p className="text-sm font-medium uppercase tracking-widest text-accent">
+          Field Notes
+        </p>
+        <h1 className="mt-3 font-serif text-4xl">
+          Lessons from building AI products, transforming workflows, and
+          learning in public.
+        </h1>
       </section>
-    </div>
+
+      {/* Featured story */}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <Link href={`/insights/${featured.slug}`} className="group grid gap-8 lg:grid-cols-2 lg:items-center">
+            {featured.imageSrc && featured.imageWidth && featured.imageHeight ? (
+              <div className="aspect-video overflow-hidden rounded-2xl bg-surface">
+                <Image
+                  src={featured.imageSrc}
+                  width={featured.imageWidth}
+                  height={featured.imageHeight}
+                  alt={featured.imageDescription}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ) : (
+              <ImagePlaceholder
+                aspect="video"
+                assetName={featured.assetName}
+                description={featured.imageDescription}
+              />
+            )}
+            <div>
+              <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted">
+                <span className="text-olive">{featured.tag}</span>
+                <span aria-hidden>·</span>
+                <span>{featured.readingTime}</span>
+              </div>
+              <h2 className="mt-3 font-serif text-3xl">{featured.title}</h2>
+              <p className="mt-3 leading-relaxed text-muted">{featured.teaser}</p>
+              <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
+                Read the story
+                <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+                  →
+                </span>
+              </p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Card grid */}
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <div className="grid gap-10 sm:grid-cols-2">
+          {rest.map((post) => (
+            <InsightCard
+              key={post.slug}
+              href={`/insights/${post.slug}`}
+              tag={post.tag}
+              readingTime={post.readingTime}
+              title={post.title}
+              excerpt={post.teaser}
+              assetName={post.assetName}
+              imageDescription={post.imageDescription}
+              imageSrc={post.imageSrc}
+              imageWidth={post.imageWidth}
+              imageHeight={post.imageHeight}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-serif text-2xl">More Topics, Coming Soon</h2>
+          <ul className="mt-6 space-y-3 text-muted">
+            {moreTopics.map((topic) => (
+              <li key={topic} className="flex gap-3">
+                <span className="text-accent">—</span>
+                <span>{topic}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }

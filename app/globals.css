@@ -11,6 +11,10 @@
   --accent: #b5533c;
   --accent-foreground: #fdf9f2;
   --copper: #bd8358;
+  --clay: #c98f74;
+  --sand: #e9dcc3;
+  --warm-grey: #a49b8b;
+  --olive: #6f7a4f;
 }
 
 .dark {
@@ -22,6 +26,10 @@
   --accent: #d97a58;
   --accent-foreground: #201b17;
   --copper: #d9a066;
+  --clay: #cf9a7d;
+  --sand: #3d3529;
+  --warm-grey: #8a8172;
+  --olive: #8b9666;
 }
 
 @theme inline {
@@ -33,6 +41,10 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-copper: var(--copper);
+  --color-clay: var(--clay);
+  --color-sand: var(--sand);
+  --color-warm-grey: var(--warm-grey);
+  --color-olive: var(--olive);
   --font-serif: var(--font-fraunces);
   --font-sans: var(--font-inter);
 }
@@ -46,4 +58,25 @@ body {
 
 .font-serif {
   font-family: var(--font-serif);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
 }

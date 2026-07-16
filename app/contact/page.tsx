@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Button from "@/app/components/Button";
+import InquiryForm from "@/app/components/InquiryForm";
 import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
@@ -33,6 +34,8 @@ export default function ContactPage() {
           LinkedIn
         </a>
       </div>
+
+      <InquiryForm />
     </div>
   );
 }
