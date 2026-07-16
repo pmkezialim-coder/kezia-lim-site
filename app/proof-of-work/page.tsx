@@ -53,7 +53,7 @@ const overview: OverviewItem[] = [
   },
   {
     label: "Workflow Automation",
-    title: "Appointment & Booking Assistant",
+    title: "AI Appointment Assistant",
     description:
       "Conversational booking integrated with calendars and automated reminders.",
     assetName: "appointment-assistant-interface.jpg",
@@ -350,7 +350,7 @@ export default function ProofOfWorkPage() {
         </p>
 
         <div id="appointment-assistant" className="mt-12 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-serif text-xl">Appointment & Booking Assistant</h3>
+          <h3 className="font-serif text-xl">AI Appointment Assistant</h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
             <div>
               <dt className="text-xs font-medium uppercase tracking-wide text-accent">

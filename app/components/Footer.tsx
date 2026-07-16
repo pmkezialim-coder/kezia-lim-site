@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/app/lib/site";
+import { LinkedInIcon } from "@/app/components/SocialIcons";
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-1 text-sm text-muted sm:items-end">
+        <div className="flex flex-col gap-3 text-sm text-muted sm:items-end">
           <a href={`mailto:${site.email}`} className="hover:text-foreground">
             {site.email}
           </a>
@@ -28,9 +29,10 @@ export default function Footer() {
             href={site.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-foreground"
+            aria-label="LinkedIn"
+            className="text-foreground/70 transition-colors hover:text-foreground"
           >
-            LinkedIn
+            <LinkedInIcon />
           </a>
         </div>
       </div>

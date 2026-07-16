@@ -176,34 +176,36 @@ export default function Home() {
       {/* BECOME feature story */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="max-w-2xl font-serif text-3xl sm:text-4xl">
-            Built to understand what makes AI feel human.
-          </h2>
-          <p className="mt-6 max-w-2xl leading-relaxed text-muted">
-            BECOME is the clearest proof of how I work: start with a deeply
-            human problem, define what the AI should and should not do,
-            prototype quickly, and refine through real use.
-          </p>
+          <div className="max-w-sm">
+            <h2 className="font-serif text-3xl sm:text-4xl">
+              Built to understand what makes AI feel human.
+            </h2>
+            <p className="mt-6 leading-relaxed text-muted">
+              BECOME is the clearest proof of how I work: start with a
+              deeply human problem, define what the AI should and should
+              not do, prototype quickly, and refine through real use.
+            </p>
 
-          <div className="mt-12">
-            <ScreenshotGallery
-              fit="contain"
-              className="flex gap-6"
-              shots={[
-                {
-                  src: "/images/become/patterns-dark.png",
-                  width: 572,
-                  height: 1224,
-                  alt: "BECOME Pattern Dashboard in dark mode",
-                },
-                {
-                  src: "/images/become/inner-compass-light.png",
-                  width: 550,
-                  height: 1214,
-                  alt: "BECOME Inner Compass summary",
-                },
-              ]}
-            />
+            <div className="mt-12">
+              <ScreenshotGallery
+                fit="contain"
+                className="flex gap-6"
+                shots={[
+                  {
+                    src: "/images/become/patterns-dark.png",
+                    width: 572,
+                    height: 1224,
+                    alt: "BECOME Pattern Dashboard in dark mode",
+                  },
+                  {
+                    src: "/images/become/inner-compass-light.png",
+                    width: 550,
+                    height: 1214,
+                    alt: "BECOME Inner Compass summary",
+                  },
+                ]}
+              />
+            </div>
           </div>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
