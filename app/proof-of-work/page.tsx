@@ -5,7 +5,7 @@ import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import FlowSteps from "@/app/components/FlowSteps";
 import CaseStudySection from "@/app/components/CaseStudySection";
 import WorkCard from "@/app/components/WorkCard";
-import { LinkIcon } from "@/app/components/SocialIcons";
+import { LinkIcon, InstagramIcon, TikTokIcon } from "@/app/components/SocialIcons";
 import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
@@ -156,7 +156,7 @@ export default function ProofOfWorkPage() {
         </p>
         <h2 className="mt-3 font-serif text-3xl">BECOME</h2>
 
-        <div className="mt-5">
+        <div className="mt-5 flex flex-wrap items-center gap-4">
           <a
             href={site.becomeUrl}
             target="_blank"
@@ -166,7 +166,24 @@ export default function ProofOfWorkPage() {
             <LinkIcon className="h-4 w-4" />
             Try BECOME
           </a>
-          {/* Instagram/TikTok icons to follow once handles are live */}
+          <a
+            href={site.becomeInstagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="BECOME on Instagram"
+            className="text-foreground/70 transition-colors hover:text-foreground"
+          >
+            <InstagramIcon />
+          </a>
+          <a
+            href={site.becomeTiktok}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="BECOME on TikTok"
+            className="text-foreground/70 transition-colors hover:text-foreground"
+          >
+            <TikTokIcon />
+          </a>
         </div>
 
         <CaseStudySection number="01" title="Product Hero">

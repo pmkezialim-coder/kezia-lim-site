@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/app/lib/site";
-import { LinkedInIcon } from "@/app/components/SocialIcons";
+import { MailIcon, LinkedInIcon } from "@/app/components/SocialIcons";
 
 export default function Footer() {
   return (
@@ -21,9 +21,13 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-3 text-sm text-muted sm:items-end">
-          <a href={`mailto:${site.email}`} className="hover:text-foreground">
-            {site.email}
+        <div className="flex items-center gap-4">
+          <a
+            href={`mailto:${site.email}`}
+            aria-label="Email"
+            className="text-foreground/70 transition-colors hover:text-foreground"
+          >
+            <MailIcon />
           </a>
           <a
             href={site.linkedin}

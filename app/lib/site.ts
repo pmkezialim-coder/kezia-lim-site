@@ -7,6 +7,8 @@ export const site = {
   ctaLabel: "Contact Me",
   workWithMeLabel: "Work With Me",
   becomeUrl: "https://becomeme.app/",
+  becomeInstagram: "https://www.instagram.com/becomeme.app/",
+  becomeTiktok: "https://www.tiktok.com/@becomeme.app",
 };
 
 export const nav = [
