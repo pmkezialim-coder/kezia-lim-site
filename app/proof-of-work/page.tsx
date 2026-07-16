@@ -26,10 +26,10 @@ type OverviewItem = {
 
 const overview: OverviewItem[] = [
   {
-    label: "Flagship Product",
+    label: "Founder · Consumer AI Product",
     title: "BECOME",
     description:
-      "An AI reflection companion designed to help people notice who they are becoming.",
+      "Human-centred AI designed to help people understand who they're becoming.",
     assetName: "become-phone-mockup-triptych.jpg",
     imageDescription: "Three phone screens of BECOME on a warm surface",
     imageSrc: "/images/become/become-phone-mockup-triptych.jpg",
@@ -39,10 +39,10 @@ const overview: OverviewItem[] = [
     ctaHref: "/proof-of-work#become",
   },
   {
-    label: "Transformation",
-    title: "AI-Assisted Public Services",
+    label: "Government Transformation",
+    title: "AI for Public Services",
     description:
-      "Redesigning high-volume workflows using human-centred AI and decision support.",
+      "Agentic AI concepts supporting citizens through complex application journeys while reducing manual verification for officers through human-in-the-loop workflows.",
     assetName: "public-services-workflow-diagram.jpg",
     imageDescription: "Abstract, anonymised workflow diagram",
     imageSrc: "/images/become/public-services-workflow-diagram.jpg",
@@ -52,9 +52,10 @@ const overview: OverviewItem[] = [
     ctaHref: "/proof-of-work#public-services",
   },
   {
-    label: "Builder Experiment",
+    label: "Workflow Automation",
     title: "Appointment & Booking Assistant",
-    description: "A conversational assistant for scheduling and booking.",
+    description:
+      "Conversational booking integrated with calendars and automated reminders.",
     assetName: "appointment-assistant-interface.jpg",
     imageDescription: "Chat interface for an appointment-booking assistant",
     imageSrc: "/images/become/appointment-assistant-interface.jpg",
@@ -64,10 +65,10 @@ const overview: OverviewItem[] = [
     ctaHref: "/proof-of-work#appointment-assistant",
   },
   {
-    label: "Builder Experiment",
+    label: "Enterprise AI",
     title: "Conversational AI & Digital Assistants",
     description:
-      "Chat and internal assistant experiences across facility management, retention, and e-commerce.",
+      "Chatbots and internal assistants across facility management, insurance, customer service, and e-commerce.",
     assetName: "internal-chatbot-interface.jpg",
     imageDescription: "Internal assistant chat interface on a laptop screen",
     imageSrc: "/images/become/internal-chatbot-interface.jpg",
@@ -77,9 +78,10 @@ const overview: OverviewItem[] = [
     ctaHref: "/proof-of-work#chatbots",
   },
   {
-    label: "Builder Experiment",
-    title: "Hackathon Prototypes",
-    description: "Fast, scrappy AI concepts built and tested under a clock.",
+    label: "Product Discovery",
+    title: "Rapid AI Innovation",
+    description:
+      "Rapidly designed and validated AI prototypes exploring document intelligence, citizen assistants, workflow automation, and decision support for public-sector services.",
     assetName: "hackathon-prototype-sketches.jpg",
     imageDescription: "Sketches and sticky notes from a hackathon session",
     imageSrc: "/images/become/hackathon-prototype-sketches.jpg",
@@ -288,17 +290,12 @@ export default function ProofOfWorkPage() {
         </CaseStudySection>
       </section>
 
-      {/* AI-Assisted Public Services */}
+      {/* AI for Public Services */}
       <section id="public-services" className="mx-auto mt-28 max-w-4xl scroll-mt-24 border-t border-border/80 pt-16">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
-          Transformation
+          Government Transformation
         </p>
-        <h2 className="mt-3 font-serif text-3xl">AI-Assisted Public Services</h2>
-        <p className="mt-4 leading-relaxed text-muted">
-          Designed AI-assisted workflows to reduce manual document review,
-          streamline citizen-facing services, and improve decision-making
-          across high-volume government processes.
-        </p>
+        <h2 className="mt-3 font-serif text-3xl">AI for Public Services</h2>
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
           <Image
             src="/images/become/public-services-workflow-diagram.jpg"
@@ -308,9 +305,37 @@ export default function ProofOfWorkPage() {
             className="h-auto w-full"
           />
         </div>
-        <p className="mt-6 text-sm text-muted">
-          Client details are anonymised under NDA.
-        </p>
+        <dl className="mt-8 space-y-5 text-sm leading-relaxed">
+          <div>
+            <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+              Challenge
+            </dt>
+            <dd className="mt-1 text-muted">
+              High-volume government services often require significant
+              manual verification and repetitive citizen support.
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+              Approach
+            </dt>
+            <dd className="mt-1 text-muted">
+              Designed AI-assisted citizen journeys and multi-agent
+              workflows that support document verification, decision
+              support, and human-in-the-loop processes.
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+              Impact
+            </dt>
+            <dd className="mt-1 text-muted">
+              Showed how practical AI can improve service delivery while
+              reducing administrative effort, with all project details
+              intentionally anonymised.
+            </dd>
+          </div>
+        </dl>
       </section>
 
       {/* Builder experiments */}
@@ -449,11 +474,38 @@ export default function ProofOfWorkPage() {
         </div>
 
         <div id="hackathons" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-serif text-xl">Hackathon Prototypes</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            Specifics stay under wraps, but the habit of building fast under
-            a clock carries into every rapid prototype since.
-          </p>
+          <h3 className="font-serif text-xl">Rapid AI Innovation</h3>
+          <dl className="mt-5 space-y-4 text-sm leading-relaxed">
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Challenge
+              </dt>
+              <dd className="mt-1 text-muted">
+                Public-sector teams need practical ways to explore AI
+                before investing in full implementation.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Approach
+              </dt>
+              <dd className="mt-1 text-muted">
+                Rapidly designed and built AI prototypes focused on citizen
+                services, document intelligence, workflow automation, and
+                internal decision support.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Impact
+              </dt>
+              <dd className="mt-1 text-muted">
+                Validated product concepts quickly and demonstrated how
+                human-centred AI could improve service delivery and
+                operational efficiency.
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 

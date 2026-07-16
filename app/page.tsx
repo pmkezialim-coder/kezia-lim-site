@@ -32,10 +32,10 @@ const featuredWork = [
     ctaHref: "/proof-of-work#become",
   },
   {
-    label: "Transformation",
-    title: "AI-Assisted Public Services",
+    label: "Government Transformation",
+    title: "AI for Public Services",
     description:
-      "Redesigning high-volume workflows using human-centred AI and decision support.",
+      "Agentic AI concepts supporting citizens through complex application journeys while reducing manual verification for officers.",
     assetName: "public-services-workflow-diagram.jpg",
     imageDescription: "Abstract, anonymised workflow diagram",
     imageSrc: "/images/become/public-services-workflow-diagram.jpg",
