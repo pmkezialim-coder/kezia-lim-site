@@ -493,13 +493,6 @@ export default function ProofOfWorkPage() {
                 — streamlined employee support and common operational
                 requests.
               </li>
-              <li>
-                <strong className="font-medium text-foreground">
-                  AI Appointment Assistant
-                </strong>{" "}
-                — conversational booking integrated with Google Calendar and
-                automated reminders.
-              </li>
             </ul>
           </div>
         </div>

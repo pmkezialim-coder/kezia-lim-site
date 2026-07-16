@@ -8,6 +8,7 @@ import WorkCard from "@/app/components/WorkCard";
 import FlowSteps from "@/app/components/FlowSteps";
 import InsightCard from "@/app/components/InsightCard";
 import CTABand from "@/app/components/CTABand";
+import { LinkIcon, InstagramIcon, TikTokIcon } from "@/app/components/SocialIcons";
 import { site, insightsPosts } from "@/app/lib/site";
 
 const metrics = [
@@ -235,10 +236,37 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap items-center gap-5">
             <Button href="/proof-of-work#become" variant="secondary">
               Read the BECOME Case Study
             </Button>
+            <a
+              href={site.becomeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
+            >
+              <LinkIcon className="h-4 w-4" />
+              Try BECOME
+            </a>
+            <a
+              href={site.becomeInstagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="BECOME on Instagram"
+              className="text-foreground/70 transition-colors hover:text-foreground"
+            >
+              <InstagramIcon />
+            </a>
+            <a
+              href={site.becomeTiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="BECOME on TikTok"
+              className="text-foreground/70 transition-colors hover:text-foreground"
+            >
+              <TikTokIcon />
+            </a>
           </div>
         </div>
       </section>
