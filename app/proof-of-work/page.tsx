@@ -5,6 +5,7 @@ import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import FlowSteps from "@/app/components/FlowSteps";
 import CaseStudySection from "@/app/components/CaseStudySection";
 import WorkCard from "@/app/components/WorkCard";
+import { LinkIcon } from "@/app/components/SocialIcons";
 import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
@@ -154,6 +155,19 @@ export default function ProofOfWorkPage() {
           Flagship Case Study
         </p>
         <h2 className="mt-3 font-serif text-3xl">BECOME</h2>
+
+        <div className="mt-5">
+          <a
+            href={site.becomeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
+          >
+            <LinkIcon className="h-4 w-4" />
+            Try BECOME
+          </a>
+          {/* Instagram/TikTok icons to follow once handles are live */}
+        </div>
 
         <CaseStudySection number="01" title="Product Hero">
           <div className="overflow-hidden rounded-2xl border border-border bg-surface">

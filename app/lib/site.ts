@@ -6,6 +6,7 @@ export const site = {
     "mailto:pm.kezialim@gmail.com?subject=Discovery%20Call",
   ctaLabel: "Contact Me",
   workWithMeLabel: "Work With Me",
+  becomeUrl: "https://becomeme.app/",
 };
 
 export const nav = [
