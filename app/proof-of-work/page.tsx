@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Button from "@/app/components/Button";
-import Todo from "@/app/components/Todo";
 import Image from "next/image";
 import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import FlowSteps from "@/app/components/FlowSteps";
@@ -66,8 +65,9 @@ const overview: OverviewItem[] = [
   },
   {
     label: "Builder Experiment",
-    title: "Chatbots & Internal Assistants",
-    description: "Internal tools built to remove repetitive team work.",
+    title: "Conversational AI & Digital Assistants",
+    description:
+      "Chat and internal assistant experiences across facility management, retention, and e-commerce.",
     assetName: "internal-chatbot-interface.jpg",
     imageDescription: "Internal assistant chat interface on a laptop screen",
     imageSrc: "/images/become/internal-chatbot-interface.jpg",
@@ -308,8 +308,8 @@ export default function ProofOfWorkPage() {
             className="h-auto w-full"
           />
         </div>
-        <p className="mt-6 text-sm">
-          <Todo>government/enterprise client name (confidentiality permitting)</Todo>
+        <p className="mt-6 text-sm text-muted">
+          Client details are anonymised under NDA.
         </p>
       </section>
 
@@ -325,24 +325,135 @@ export default function ProofOfWorkPage() {
         </p>
 
         <div id="appointment-assistant" className="mt-12 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-medium">Appointment & Booking Assistant</h3>
-          <div className="mt-3">
-            <Todo>challenge, approach, and impact details</Todo>
-          </div>
+          <h3 className="font-serif text-xl">Appointment & Booking Assistant</h3>
+          <dl className="mt-5 space-y-4 text-sm leading-relaxed">
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Challenge
+              </dt>
+              <dd className="mt-1 text-muted">
+                I prefer booking appointments by text, but my regular nail
+                and hair salons still relied on phone calls and manually
+                updating appointment books. The process worked, but it
+                created unnecessary back-and-forth for both customers and
+                staff.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Approach
+              </dt>
+              <dd className="mt-1 text-muted">
+                I designed and built an AI-powered booking assistant that
+                lets customers book through chat. The assistant checks
+                availability against Google Calendar, creates appointments
+                automatically, and sends confirmation and reminder messages
+                before each booking.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Impact
+              </dt>
+              <dd className="mt-1 text-muted">
+                The prototype demonstrated how a familiar messaging
+                experience could replace manual scheduling, reduce
+                administrative effort, and create a smoother customer
+                experience without changing how the business operates.
+              </dd>
+            </div>
+          </dl>
         </div>
 
         <div id="chatbots" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-medium">Chatbots & Internal Assistants</h3>
-          <div className="mt-3">
-            <Todo>which chatbots, for whom, and what they did</Todo>
+          <h3 className="font-serif text-xl">
+            Conversational AI & Digital Assistants
+          </h3>
+          <dl className="mt-5 space-y-4 text-sm leading-relaxed">
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Challenge
+              </dt>
+              <dd className="mt-1 text-muted">
+                Whether helping residents report maintenance issues or
+                helping customers find products, many everyday interactions
+                were repetitive, manual and difficult to scale.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Approach
+              </dt>
+              <dd className="mt-1 text-muted">
+                Over the past decade, I&apos;ve designed chatbot and
+                internal assistant experiences for facility management,
+                insurance, customer retention and e-commerce, focusing on
+                solving practical business problems rather than simply
+                adding another chat interface.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-wide text-accent">
+                Impact
+              </dt>
+              <dd className="mt-1 text-muted">
+                Each solution improved access to services, automated
+                repetitive interactions, and became part of broader digital
+                transformation initiatives within the organisations.
+              </dd>
+            </div>
+          </dl>
+
+          <div className="mt-6">
+            <p className="text-xs font-medium uppercase tracking-wide text-accent">
+              A Few Examples
+            </p>
+            <ul className="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+              <li>
+                <strong className="font-medium text-foreground">
+                  Facility Management Assistant
+                </strong>{" "}
+                — maintenance requests, air-conditioning servicing, booking
+                technicians and service updates.
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">
+                  Customer Retention Chatbot
+                </strong>{" "}
+                — guided users through churn-saving journeys and
+                personalised retention offers.
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">
+                  Smart Product Assistant
+                </strong>{" "}
+                — helped customers discover products and stock availability
+                across e-commerce platforms.
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">
+                  Internal Service Assistant
+                </strong>{" "}
+                — streamlined employee support and common operational
+                requests.
+              </li>
+              <li>
+                <strong className="font-medium text-foreground">
+                  AI Appointment Assistant
+                </strong>{" "}
+                — conversational booking integrated with Google Calendar and
+                automated reminders.
+              </li>
+            </ul>
           </div>
         </div>
 
         <div id="hackathons" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-medium">Hackathon Prototypes</h3>
-          <div className="mt-3">
-            <Todo>which hackathons, what was built, results</Todo>
-          </div>
+          <h3 className="font-serif text-xl">Hackathon Prototypes</h3>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            Specifics stay under wraps, but the habit of building fast under
+            a clock carries into every rapid prototype since.
+          </p>
         </div>
       </section>
 
