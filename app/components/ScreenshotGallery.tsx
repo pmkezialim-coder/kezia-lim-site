@@ -15,10 +15,12 @@ type Shot = {
 export default function ScreenshotGallery({
   shots,
   fit = "natural",
+  size = "sm",
   className = "grid gap-4 sm:grid-cols-3",
 }: {
   shots: Shot[];
   fit?: "natural" | "contain";
+  size?: "sm" | "lg";
   className?: string;
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -34,7 +36,7 @@ export default function ScreenshotGallery({
             aria-label={`Open full size: ${shot.alt}`}
             className="cursor-zoom-in text-left transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-2xl"
           >
-            <AppScreenshot {...shot} fit={fit} />
+            <AppScreenshot {...shot} fit={fit} size={size} />
           </button>
         ))}
       </div>

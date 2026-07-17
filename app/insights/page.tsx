@@ -28,7 +28,7 @@ export default function InsightsPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Field Notes
         </p>
-        <h1 className="mt-3 font-serif text-4xl">
+        <h1 className="mt-3 font-serif text-4xl sm:text-5xl">
           Lessons from building AI products, transforming workflows, and
           learning in public.
         </h1>

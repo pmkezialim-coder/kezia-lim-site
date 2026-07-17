@@ -26,7 +26,7 @@ export default function AboutPage() {
           I didn&apos;t start in AI. I started by solving operational
           problems.
         </h1>
-        <p className="mt-6 max-w-xl leading-relaxed text-muted">
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
           Teams weren&apos;t struggling because they lacked technology. They
           were struggling because their processes were fragmented and hard
           to use. AI became the tool that let me redesign how people

@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+const containHeights = {
+  sm: "h-48 sm:h-56",
+  lg: "h-64 sm:h-80",
+};
+
 export default function AppScreenshot({
   src,
   width,
@@ -7,6 +12,7 @@ export default function AppScreenshot({
   alt,
   caption,
   fit = "natural",
+  size = "sm",
 }: {
   src: string;
   width: number;
@@ -14,11 +20,12 @@ export default function AppScreenshot({
   alt: string;
   caption?: string;
   fit?: "natural" | "contain";
+  size?: keyof typeof containHeights;
 }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-surface">
       {fit === "contain" ? (
-        <div className="flex h-48 items-center justify-center p-3 sm:h-56">
+        <div className={`flex items-center justify-center p-3 ${containHeights[size]}`}>
           <Image
             src={src}
             width={width}

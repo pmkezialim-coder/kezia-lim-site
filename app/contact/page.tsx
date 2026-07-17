@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-24 text-center sm:py-32">
-      <h1 className="font-serif text-4xl">Let&apos;s Build Something Meaningful</h1>
+      <h1 className="font-serif text-4xl sm:text-5xl">Let&apos;s Build Something Meaningful</h1>
       <p className="mt-6 text-lg leading-relaxed text-muted">
         Whether you&apos;re exploring AI adoption, building a product, or
         just want a fresh perspective on digital transformation — I&apos;d

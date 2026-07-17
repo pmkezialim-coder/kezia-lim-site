@@ -177,19 +177,73 @@ export default function Home() {
       {/* BECOME feature story */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="max-w-sm">
-            <h2 className="font-serif text-3xl sm:text-4xl">
-              Built to understand what makes AI feel human.
-            </h2>
-            <p className="mt-6 leading-relaxed text-muted">
-              BECOME is the clearest proof of how I work: start with a
-              deeply human problem, define what the AI should and should
-              not do, prototype quickly, and refine through real use.
-            </p>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+            {/* Copy + timeline + CTAs */}
+            <div>
+              <h2 className="font-serif text-3xl sm:text-4xl">
+                Built to understand what makes AI feel human.
+              </h2>
+              <p className="mt-6 max-w-md leading-relaxed text-muted">
+                BECOME is the clearest proof of how I work: start with a
+                deeply human problem, define what the AI should and should
+                not do, prototype quickly, and refine through real use.
+              </p>
 
-            <div className="mt-12">
+              <div className="mt-10">
+                <p className="text-xs font-medium uppercase tracking-widest text-muted">
+                  From spec to shipped
+                </p>
+                <div className="mt-4">
+                  <FlowSteps
+                    steps={[
+                      { icon: "📝", label: "PRD" },
+                      { icon: "🧪", label: "Prototype" },
+                      { icon: "🪞", label: "Personal Testing" },
+                      { icon: "🚀", label: "Launch" },
+                    ]}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center gap-5">
+                <Button href="/proof-of-work#become" variant="secondary">
+                  Read the BECOME Case Study
+                </Button>
+                <a
+                  href={site.becomeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
+                >
+                  <LinkIcon className="h-4 w-4" />
+                  Try BECOME
+                </a>
+                <a
+                  href={site.becomeInstagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="BECOME on Instagram"
+                  className="text-foreground/70 transition-colors hover:text-foreground"
+                >
+                  <InstagramIcon />
+                </a>
+                <a
+                  href={site.becomeTiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="BECOME on TikTok"
+                  className="text-foreground/70 transition-colors hover:text-foreground"
+                >
+                  <TikTokIcon />
+                </a>
+              </div>
+            </div>
+
+            {/* Visuals */}
+            <div className="space-y-6">
               <ScreenshotGallery
                 fit="contain"
+                size="lg"
                 className="flex gap-6"
                 shots={[
                   {
@@ -206,67 +260,16 @@ export default function Home() {
                   },
                 ]}
               />
-            </div>
-          </div>
-
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-            <div className="aspect-video overflow-hidden rounded-2xl bg-surface">
-              <Image
-                src="/images/become/become-founder-notebook-wireframe.jpg"
-                width={1672}
-                height={941}
-                alt="Founder's notebook open to early BECOME wireframes and product notes"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-xs font-medium uppercase tracking-widest text-muted">
-                From spec to shipped
-              </p>
-              <div className="mt-4">
-                <FlowSteps
-                  steps={[
-                    { icon: "📝", label: "PRD" },
-                    { icon: "🧪", label: "Prototype" },
-                    { icon: "🪞", label: "Personal Testing" },
-                    { icon: "🚀", label: "Launch" },
-                  ]}
+              <div className="aspect-video overflow-hidden rounded-2xl bg-surface">
+                <Image
+                  src="/images/become/become-founder-notebook-wireframe.jpg"
+                  width={1672}
+                  height={941}
+                  alt="Founder's notebook open to early BECOME wireframes and product notes"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center gap-5">
-            <Button href="/proof-of-work#become" variant="secondary">
-              Read the BECOME Case Study
-            </Button>
-            <a
-              href={site.becomeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
-            >
-              <LinkIcon className="h-4 w-4" />
-              Try BECOME
-            </a>
-            <a
-              href={site.becomeInstagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="BECOME on Instagram"
-              className="text-foreground/70 transition-colors hover:text-foreground"
-            >
-              <InstagramIcon />
-            </a>
-            <a
-              href={site.becomeTiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="BECOME on TikTok"
-              className="text-foreground/70 transition-colors hover:text-foreground"
-            >
-              <TikTokIcon />
-            </a>
           </div>
         </div>
       </section>

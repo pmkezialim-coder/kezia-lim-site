@@ -60,8 +60,8 @@ export default function ConsultingPage() {
 
       {/* Problems */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <h2 className="font-serif text-2xl">Sound familiar?</h2>
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <h2 className="font-serif text-3xl">Sound familiar?</h2>
           <ul className="mt-8 space-y-4">
             {problems.map((quote) => (
               <li
@@ -76,8 +76,8 @@ export default function ConsultingPage() {
       </section>
 
       {/* Outcomes */}
-      <section className="mx-auto max-w-3xl px-6 py-16">
-        <h2 className="font-serif text-2xl">What you leave with</h2>
+      <section className="mx-auto max-w-3xl px-6 py-24">
+        <h2 className="font-serif text-3xl">What you leave with</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {outcomes.map((outcome) => (
             <p key={outcome} className="font-serif text-xl leading-snug">
@@ -89,8 +89,8 @@ export default function ConsultingPage() {
 
       {/* Visual process */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-16">
-          <h2 className="font-serif text-2xl">How I Work</h2>
+        <div className="mx-auto max-w-5xl px-6 py-24">
+          <h2 className="font-serif text-3xl">How I Work</h2>
           <div className="mt-10">
             <FlowSteps
               steps={[
@@ -107,8 +107,8 @@ export default function ConsultingPage() {
       </section>
 
       {/* Engagement options */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="font-serif text-2xl">Ways to work together</h2>
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <h2 className="font-serif text-3xl">Ways to work together</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-3">
           {engagements.map((e) => (
             <div key={e.title} className="rounded-2xl border border-border p-6">
@@ -142,11 +142,11 @@ export default function ConsultingPage() {
 
       {/* Selected example */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-20">
+        <div className="mx-auto max-w-5xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             Selected Example
           </p>
-          <h2 className="mt-3 font-serif text-2xl">BECOME</h2>
+          <h2 className="mt-3 font-serif text-3xl">BECOME</h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted">
             This exact process, applied to my own idea: PRD to live AI
             product in three weeks. It&apos;s the clearest proof I have that

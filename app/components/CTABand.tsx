@@ -20,7 +20,7 @@ export default function CTABand({
         {body && (
           <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted">{body}</p>
         )}
-        <div className="mt-9">
+        <div className="mt-8">
           <Button href={ctaHref}>{ctaLabel}</Button>
         </div>
       </div>
