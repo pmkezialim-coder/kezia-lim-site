@@ -13,8 +13,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-lg font-medium">
-          Kezia Lim
+        <Link href="/" className="flex items-center gap-3" aria-label="Kezia Lim, home">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/40 font-serif text-xs">
+            KL
+          </span>
+          <span className="font-serif text-lg font-medium">Kezia Lim</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -26,7 +29,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm transition-colors ${
-                  active ? "text-accent" : "text-foreground/70 hover:text-foreground"
+                  active
+                    ? "border-b border-accent text-accent"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {item.label}
@@ -36,9 +41,10 @@ export default function Header() {
           <ThemeToggle />
           <a
             href={site.discoveryCallMailto}
-            className="rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
           >
             {site.ctaLabel}
+            <span aria-hidden>↗</span>
           </a>
         </nav>
 
@@ -70,9 +76,10 @@ export default function Header() {
           ))}
           <a
             href={site.discoveryCallMailto}
-            className="mt-2 inline-flex w-fit rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground"
+            className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground"
           >
             {site.ctaLabel}
+            <span aria-hidden>↗</span>
           </a>
         </nav>
       )}

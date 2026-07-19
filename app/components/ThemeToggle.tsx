@@ -30,19 +30,17 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={() => setDarkMode(!dark)}
-      aria-label="Toggle dark mode"
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground/70 transition-colors hover:text-foreground"
+      aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
+      className="relative flex h-7 w-[52px] shrink-0 items-center justify-between rounded-full border border-border bg-surface px-1.5 text-[10px] text-muted transition-colors"
     >
-      {dark ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-          <circle cx="12" cy="12" r="4.5" />
-          <path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-        </svg>
-      ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
-        </svg>
-      )}
+      <span aria-hidden>☀</span>
+      <span aria-hidden>☾</span>
+      <span
+        aria-hidden
+        className={`absolute top-0.5 h-5 w-5 rounded-full bg-background shadow-sm transition-transform duration-200 ${
+          dark ? "translate-x-[26px]" : "translate-x-0.5"
+        }`}
+      />
     </button>
   );
 }

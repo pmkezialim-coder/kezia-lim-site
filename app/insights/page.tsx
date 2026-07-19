@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ImagePlaceholder from "@/app/components/ImagePlaceholder";
-import InsightCard from "@/app/components/InsightCard";
-import { insightsPosts } from "@/app/lib/site";
+import CTABand from "@/app/components/CTABand";
+import { site, insightsPosts } from "@/app/lib/site";
 
 export const metadata: Metadata = {
   title: "Field Notes — Kezia Lim",
@@ -34,80 +34,113 @@ export default function InsightsPage() {
         </h1>
       </section>
 
-      {/* Featured story */}
+      {/* Editorial grid */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-16">
-          <Link href={`/insights/${featured.slug}`} className="group grid gap-8 lg:grid-cols-2 lg:items-center">
-            {featured.imageSrc && featured.imageWidth && featured.imageHeight ? (
-              <div className="aspect-video overflow-hidden rounded-2xl bg-surface">
-                <Image
-                  src={featured.imageSrc}
-                  width={featured.imageWidth}
-                  height={featured.imageHeight}
-                  alt={featured.imageDescription}
-                  className="h-full w-full object-cover"
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Featured — spans both secondary rows */}
+            <Link
+              href={`/insights/${featured.slug}`}
+              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-background lg:row-span-2"
+            >
+              {featured.imageSrc && featured.imageWidth && featured.imageHeight ? (
+                <div className="aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={featured.imageSrc}
+                    width={featured.imageWidth}
+                    height={featured.imageHeight}
+                    alt={featured.imageDescription}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+              ) : (
+                <ImagePlaceholder
+                  aspect="video"
+                  assetName={featured.assetName}
+                  description={featured.imageDescription}
+                  className="rounded-none border-0"
                 />
+              )}
+              <div className="flex flex-1 flex-col p-8">
+                <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted">
+                  <span className="text-olive">{featured.tag}</span>
+                  <span aria-hidden>·</span>
+                  <span>{featured.readingTime}</span>
+                </div>
+                <h2 className="mt-4 font-serif text-3xl sm:text-4xl">{featured.title}</h2>
+                <p className="mt-3 leading-relaxed text-muted">{featured.teaser}</p>
+                <p className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium">
+                  Read the story
+                  <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+                    →
+                  </span>
+                </p>
               </div>
-            ) : (
-              <ImagePlaceholder
-                aspect="video"
-                assetName={featured.assetName}
-                description={featured.imageDescription}
-              />
-            )}
-            <div>
-              <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted">
-                <span className="text-olive">{featured.tag}</span>
-                <span aria-hidden>·</span>
-                <span>{featured.readingTime}</span>
-              </div>
-              <h2 className="mt-3 font-serif text-3xl">{featured.title}</h2>
-              <p className="mt-3 leading-relaxed text-muted">{featured.teaser}</p>
-              <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
-                Read the story
-                <span className="transition-transform group-hover:translate-x-1" aria-hidden>
-                  →
-                </span>
-              </p>
-            </div>
-          </Link>
-        </div>
-      </section>
+            </Link>
 
-      {/* Card grid */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="grid gap-10 sm:grid-cols-2">
-          {rest.map((post) => (
-            <InsightCard
-              key={post.slug}
-              href={`/insights/${post.slug}`}
-              tag={post.tag}
-              readingTime={post.readingTime}
-              title={post.title}
-              excerpt={post.teaser}
-              assetName={post.assetName}
-              imageDescription={post.imageDescription}
-              imageSrc={post.imageSrc}
-              imageWidth={post.imageWidth}
-              imageHeight={post.imageHeight}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <h2 className="font-serif text-2xl">More Topics, Coming Soon</h2>
-          <ul className="mt-6 space-y-3 text-muted">
-            {moreTopics.map((topic) => (
-              <li key={topic} className="flex gap-3">
-                <span className="text-accent">—</span>
-                <span>{topic}</span>
-              </li>
+            {/* Secondary posts */}
+            {rest.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/insights/${post.slug}`}
+                className="group flex gap-5 rounded-2xl border border-border bg-background p-5"
+              >
+                <div className="w-28 shrink-0 sm:w-36">
+                  {post.imageSrc && post.imageWidth && post.imageHeight ? (
+                    <div className="aspect-square overflow-hidden rounded-xl">
+                      <Image
+                        src={post.imageSrc}
+                        width={post.imageWidth}
+                        height={post.imageHeight}
+                        alt={post.imageDescription}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder
+                      aspect="square"
+                      assetName={post.assetName}
+                      description={post.imageDescription}
+                      className="rounded-xl"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted">
+                    <span className="text-olive">{post.tag}</span>
+                    <span aria-hidden>·</span>
+                    <span>{post.readingTime}</span>
+                  </div>
+                  <h3 className="mt-2 font-serif text-xl">{post.title}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted">
+                    {post.teaser}
+                  </p>
+                </div>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-16">
+        <h2 className="font-serif text-2xl">More Topics, Coming Soon</h2>
+        <ul className="mt-6 space-y-3 text-muted">
+          {moreTopics.map((topic) => (
+            <li key={topic} className="flex gap-3">
+              <span className="text-accent">—</span>
+              <span>{topic}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <CTABand
+        heading="Have an AI opportunity worth exploring?"
+        body="Let's find out whether it should become a product, a workflow, or something simpler."
+        ctaLabel={site.ctaLabel}
+        ctaHref={site.discoveryCallMailto}
+        bold
+      />
     </>
   );
 }

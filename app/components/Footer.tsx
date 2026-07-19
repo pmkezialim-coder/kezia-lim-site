@@ -4,44 +4,47 @@ import { MailIcon, LinkedInIcon } from "@/app/components/SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/80">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="bg-foreground text-background">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-14 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="font-serif text-lg">Kezia Lim</p>
-          <p className="mt-1 text-sm text-muted">
-            AI Product Leader. Builder. Problem Solver.
+          <p className="font-serif text-xl">Kezia Lim</p>
+          <p className="mt-1 text-sm text-background/60">
+            AI Product Leader · Builder · Problem Solver
+          </p>
+          <p className="mt-1 text-sm text-background/60">
+            Singapore · Working across Southeast Asia
           </p>
         </div>
 
-        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-foreground/70">
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-foreground">
+            <Link key={item.href} href={item.href} className="hover:text-background">
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href={`mailto:${site.email}`}
             aria-label="Email"
-            className="text-foreground/70 transition-colors hover:text-foreground"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-background/25 text-background/70 transition-colors hover:border-background/50 hover:text-background"
           >
-            <MailIcon />
+            <MailIcon className="h-4 w-4" />
           </a>
           <a
             href={site.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-foreground/70 transition-colors hover:text-foreground"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-background/25 text-background/70 transition-colors hover:border-background/50 hover:text-background"
           >
-            <LinkedInIcon />
+            <LinkedInIcon className="h-4 w-4" />
           </a>
         </div>
       </div>
 
-      <div className="border-t border-border/80 px-6 py-4 text-center text-xs text-muted">
+      <div className="border-t border-background/15 px-6 py-4 text-center text-xs text-background/50">
         © {new Date().getFullYear()} Kezia Lim. All rights reserved.
       </div>
     </footer>

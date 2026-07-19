@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Button from "@/app/components/Button";
 import Image from "next/image";
 import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import FlowSteps from "@/app/components/FlowSteps";
 import CaseStudySection from "@/app/components/CaseStudySection";
 import WorkCard from "@/app/components/WorkCard";
+import CTABand from "@/app/components/CTABand";
 import { LinkIcon, InstagramIcon, TikTokIcon } from "@/app/components/SocialIcons";
 import { site } from "@/app/lib/site";
 
@@ -133,7 +133,8 @@ const screenshots = [
 
 export default function ProofOfWorkPage() {
   return (
-    <div className="px-6 py-20 sm:py-28">
+    <>
+    <div className="px-6 pt-20 sm:pt-28">
       <div className="mx-auto max-w-4xl">
         <h1 className="font-serif text-4xl sm:text-5xl">Proof of Work</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-muted">
@@ -154,7 +155,7 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Flagship Case Study
         </p>
-        <h2 className="mt-3 font-serif text-3xl">BECOME</h2>
+        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">BECOME</h2>
 
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <a
@@ -326,7 +327,7 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Government Transformation
         </p>
-        <h2 className="mt-3 font-serif text-3xl">AI for Public Services</h2>
+        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">AI for Public Services</h2>
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
           <Image
             src="/images/become/public-services-workflow-diagram.jpg"
@@ -374,7 +375,7 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Builder Experiments
         </p>
-        <h2 className="mt-3 font-serif text-3xl">Rapid AI Prototypes</h2>
+        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">Rapid AI Prototypes</h2>
         <p className="mt-4 max-w-xl leading-relaxed text-muted">
           From appointment assistants to workflow automation — practical AI
           concepts built and tested quickly.
@@ -533,9 +534,15 @@ export default function ProofOfWorkPage() {
         </div>
       </section>
 
-      <div className="mx-auto mt-16 max-w-4xl">
-        <Button href={site.discoveryCallMailto}>{site.ctaLabel}</Button>
-      </div>
+      <div className="pb-24" />
     </div>
+
+    <CTABand
+      heading="Have a project worth building this way?"
+      ctaLabel={site.ctaLabel}
+      ctaHref={site.discoveryCallMailto}
+      bold
+    />
+    </>
   );
 }

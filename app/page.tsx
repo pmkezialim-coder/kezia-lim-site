@@ -5,6 +5,7 @@ import AnnotatedImage from "@/app/components/AnnotatedImage";
 import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import MetricStrip from "@/app/components/MetricStrip";
 import WorkCard from "@/app/components/WorkCard";
+import FlagshipCard from "@/app/components/FlagshipCard";
 import FlowSteps from "@/app/components/FlowSteps";
 import InsightCard from "@/app/components/InsightCard";
 import CTABand from "@/app/components/CTABand";
@@ -18,20 +19,7 @@ const metrics = [
   { value: "SEA", label: "Enterprise & Public-Sector Experience" },
 ];
 
-const featuredWork = [
-  {
-    label: "Flagship Product",
-    title: "BECOME",
-    description:
-      "An AI reflection companion designed to help people notice who they are becoming.",
-    assetName: "become-phone-mockup-triptych.jpg",
-    imageDescription: "Three phone screens of BECOME on a warm surface",
-    imageSrc: "/images/become/become-phone-mockup-triptych.jpg",
-    imageWidth: 1536,
-    imageHeight: 1024,
-    ctaLabel: "View Case Study",
-    ctaHref: "/proof-of-work#become",
-  },
+const secondaryWork = [
   {
     label: "Government Transformation",
     title: "AI for Public Services",
@@ -94,67 +82,115 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl gap-14 px-6 pt-16 pb-20 sm:pt-24 sm:pb-24 lg:grid-cols-[1fr_1fr] lg:items-center">
-        <div className="fade-in">
-          <p className="text-sm font-medium uppercase tracking-widest text-accent">
-            AI Product Leader · Founder · Builder
-          </p>
-          <h1 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
-            I turn AI ideas into products people actually use.
-          </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-            I help organisations move from AI curiosity to practical
-            products, workflows, and experiences — combining strategy,
-            product thinking, and hands-on implementation.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button href="/consulting">{site.workWithMeLabel}</Button>
-            <Button href="/proof-of-work" variant="secondary">
-              Explore My Work
-            </Button>
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-14 sm:pt-24">
+        <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div className="fade-in">
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">
+              AI Product Leader · Founder · Builder · Singapore
+            </p>
+            <h1 className="mt-4 font-serif text-5xl leading-[1.05] sm:text-6xl">
+              I turn AI ideas into products people actually use.
+            </h1>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
+              I help organisations move from AI curiosity to practical
+              products, workflows, and experiences — combining strategy,
+              product thinking, and hands-on implementation.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="/consulting">{site.workWithMeLabel}</Button>
+              <Button href="/proof-of-work" variant="secondary">
+                Explore My Work
+              </Button>
+            </div>
           </div>
+
+          <AnnotatedImage
+            src="/images/become/hero-founder-desk-composition.jpg"
+            width={1672}
+            height={941}
+            alt="Founder working at a desk — laptop with product wireframes, phone showing BECOME, an open notebook"
+            annotations={[
+              "Founder of BECOME",
+              "14+ years in product",
+              "AI · Enterprise · Public Sector",
+              "From PRD to live in 3 weeks",
+            ]}
+          />
         </div>
 
-        <AnnotatedImage
-          src="/images/become/hero-founder-desk-composition.jpg"
-          width={1672}
-          height={941}
-          alt="Founder working at a desk — laptop with product wireframes, phone showing BECOME, an open notebook"
-          annotations={[
-            "Founder of BECOME",
-            "14+ years in product",
-            "AI · Enterprise · Public Sector",
-            "From PRD to live in 3 weeks",
-          ]}
-        />
-      </section>
-
-      {/* Credibility strip */}
-      <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-10">
+        <div className="mt-16 border-t border-border/80 pt-10">
           <MetricStrip metrics={metrics} />
         </div>
       </section>
 
       {/* Featured Work */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="font-serif text-3xl">Featured Work</h2>
-        <div className="mt-10 grid gap-10 sm:grid-cols-3">
-          {featuredWork.map((item) => (
-            <WorkCard key={item.title} {...item} />
-          ))}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">
+              Selected Work
+            </p>
+            <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+              Strategy is useful when it becomes something real.
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted">
+              My work sits between business transformation, product
+              thinking, and hands-on delivery — from discovering the right
+              problem to proving a solution in the real world.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <FlagshipCard
+              kicker="Flagship Proof Point"
+              eyebrow="Live Product · Founder-Led"
+              mark="BECOME"
+              title="See who you're becoming while you're still living it."
+              lede="An AI reflection companion designed to help people notice who they are becoming."
+              facts={[
+                {
+                  label: "Challenge",
+                  body: "People are changing constantly, but rarely see it while it's happening.",
+                },
+                {
+                  label: "Approach",
+                  body: "Define what the AI should and should not do, prototype quickly, refine through real use.",
+                },
+                {
+                  label: "Why It Matters",
+                  body: "PRD to live product in three weeks — proof I don't just advise, I ship.",
+                },
+              ]}
+              ctaLabel="Read the BECOME Case Study"
+              ctaHref="/proof-of-work#become"
+              journeyLabel="From Spec to Shipped"
+              steps={[
+                { number: "01", label: "PRD" },
+                { number: "02", label: "Prototype" },
+                { number: "03", label: "Personal Testing" },
+                { number: "04", label: "Launch" },
+              ]}
+              quote="I read what the Inner Compass had written, and I cried — because it was accurate."
+            />
+          </div>
+
+          <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            {secondaryWork.map((item) => (
+              <WorkCard key={item.title} {...item} />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* You may be here because... */}
-      <section className="border-t border-border/80 bg-surface">
+      <section>
         <div className="mx-auto max-w-4xl px-6 py-24">
-          <h2 className="font-serif text-3xl">You may be here because…</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl">You may be here because…</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {recognitionCards.map((line) => (
               <div
                 key={line}
-                className="rounded-2xl border border-border bg-background p-6"
+                className="rounded-2xl border border-border bg-surface p-6"
               >
                 <p className="leading-relaxed">{line}</p>
               </div>
@@ -167,15 +203,17 @@ export default function Home() {
       </section>
 
       {/* How I Work */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="font-serif text-3xl">How I Work</h2>
-        <div className="mt-12">
-          <FlowSteps steps={howIWork} />
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="font-serif text-3xl sm:text-4xl">How I Work</h2>
+          <div className="mt-12">
+            <FlowSteps steps={howIWork} />
+          </div>
         </div>
       </section>
 
       {/* BECOME feature story */}
-      <section className="border-t border-border/80 bg-surface">
+      <section>
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
             {/* Copy + timeline + CTAs */}
@@ -275,21 +313,23 @@ export default function Home() {
       </section>
 
       {/* Operating Principles */}
-      <section className="mx-auto max-w-4xl px-6 py-24">
-        <h2 className="font-serif text-3xl">How I think about AI products</h2>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2">
-          {principles.map((principle) => (
-            <p key={principle} className="font-serif text-2xl leading-snug sm:text-3xl">
-              {principle}
-            </p>
-          ))}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-4xl px-6 py-24">
+          <h2 className="font-serif text-3xl sm:text-4xl">How I think about AI products</h2>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+            {principles.map((principle) => (
+              <p key={principle} className="font-serif text-2xl leading-snug sm:text-3xl">
+                {principle}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Currently Building */}
-      <section className="border-t border-border/80 bg-surface">
+      <section>
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="font-serif text-3xl">Currently Building</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl">Currently Building</h2>
           <ul className="mt-8 space-y-4">
             {currentlyBuilding.map((item) => (
               <li key={item} className="flex items-center gap-3 text-lg">
@@ -302,29 +342,31 @@ export default function Home() {
       </section>
 
       {/* Insights preview */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex items-baseline justify-between">
-          <h2 className="font-serif text-3xl">Field Notes</h2>
-          <Link href="/insights" className="text-sm font-medium text-accent">
-            View all →
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-10 sm:grid-cols-3">
-          {insightsPosts.map((post) => (
-            <InsightCard
-              key={post.slug}
-              href={`/insights/${post.slug}`}
-              tag={post.tag}
-              readingTime={post.readingTime}
-              title={post.title}
-              excerpt={post.teaser}
-              assetName={post.assetName}
-              imageDescription={post.imageDescription}
-              imageSrc={post.imageSrc}
-              imageWidth={post.imageWidth}
-              imageHeight={post.imageHeight}
-            />
-          ))}
+      <section className="border-t border-border/80 bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="flex items-baseline justify-between">
+            <h2 className="font-serif text-3xl sm:text-4xl">Field Notes</h2>
+            <Link href="/insights" className="text-sm font-medium text-accent">
+              View all →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-10 sm:grid-cols-3">
+            {insightsPosts.map((post) => (
+              <InsightCard
+                key={post.slug}
+                href={`/insights/${post.slug}`}
+                tag={post.tag}
+                readingTime={post.readingTime}
+                title={post.title}
+                excerpt={post.teaser}
+                assetName={post.assetName}
+                imageDescription={post.imageDescription}
+                imageSrc={post.imageSrc}
+                imageWidth={post.imageWidth}
+                imageHeight={post.imageHeight}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -334,7 +376,7 @@ export default function Home() {
         body="Let's find out whether it should become a product, a workflow, or something simpler."
         ctaLabel={site.ctaLabel}
         ctaHref={site.discoveryCallMailto}
-        tinted
+        bold
       />
     </>
   );
