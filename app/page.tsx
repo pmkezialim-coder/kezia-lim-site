@@ -1,7 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import Button from "@/app/components/Button";
-import AnnotatedImage from "@/app/components/AnnotatedImage";
+import HeroIllustration from "@/app/components/HeroIllustration";
 import MetricStrip from "@/app/components/MetricStrip";
-import WorkCard from "@/app/components/WorkCard";
 import FlagshipCard from "@/app/components/FlagshipCard";
 import FlowSteps from "@/app/components/FlowSteps";
 import CTABand from "@/app/components/CTABand";
@@ -21,9 +22,8 @@ const secondaryWork = [
     title: "AI for Public Services",
     description:
       "Agentic AI concepts supporting citizens through complex application journeys while reducing manual verification for officers.",
-    assetName: "public-services-workflow-diagram.jpg",
-    imageDescription: "Abstract, anonymised workflow diagram",
     imageSrc: "/images/become/public-services-workflow-diagram.jpg",
+    imageAlt: "Abstract, anonymised workflow diagram",
     imageWidth: 1693,
     imageHeight: 929,
     ctaLabel: "Explore the Approach",
@@ -34,9 +34,8 @@ const secondaryWork = [
     title: "Rapid AI Prototypes",
     description:
       "From appointment assistants to workflow automation — practical AI concepts built and tested quickly.",
-    assetName: "prototype-interface-collage.jpg",
-    imageDescription: "Collage of small product interfaces and sketches",
     imageSrc: "/images/become/prototype-interface-collage.jpg",
+    imageAlt: "Collage of small product interfaces and sketches",
     imageWidth: 1536,
     imageHeight: 1024,
     ctaLabel: "See Experiments",
@@ -63,7 +62,7 @@ export default function Home() {
             <p className="text-sm font-medium uppercase tracking-widest text-accent">
               AI Product Leader · Founder · Builder · Singapore
             </p>
-            <h1 className="mt-4 font-serif text-5xl leading-[1.05] sm:text-6xl">
+            <h1 className="mt-4 font-serif text-[clamp(2.75rem,6.3vw,5.25rem)] leading-[0.98]">
               I turn AI ideas into products people actually use.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
@@ -79,18 +78,7 @@ export default function Home() {
             </div>
           </div>
 
-          <AnnotatedImage
-            src="/images/become/hero-founder-desk-composition.jpg"
-            width={1672}
-            height={941}
-            alt="Founder working at a desk — laptop with product wireframes, phone showing BECOME, an open notebook"
-            annotations={[
-              "Founder of BECOME",
-              "14+ years in product",
-              "AI · Enterprise · Public Sector",
-              "From PRD to live in 3 weeks",
-            ]}
-          />
+          <HeroIllustration />
         </div>
 
         <div className="mt-16 border-t border-border/80 pt-10">
@@ -98,13 +86,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected Work */}
+      {/* Proof of Work */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-28 sm:py-32">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             Proof of Work
           </p>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+          <h2 className="mt-3 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
             Strategy is useful when it becomes something real.
           </h2>
           <p className="mt-5 max-w-3xl leading-relaxed text-muted">
@@ -113,7 +101,7 @@ export default function Home() {
             proving a solution in the real world.
           </p>
 
-          <div className="mt-12">
+          <div className="mt-14">
             <FlagshipCard
               kicker="Flagship Proof Point"
               eyebrow="Live Product · Founder-Led"
@@ -176,39 +164,69 @@ export default function Home() {
                 </>
               }
             />
-          </div>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-2">
-            {secondaryWork.map((item) => (
-              <WorkCard key={item.title} {...item} />
-            ))}
+            {/* Seamless hairline grid for secondary work */}
+            <div className="mt-px grid gap-px overflow-hidden bg-border sm:grid-cols-2">
+              {secondaryWork.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.ctaHref}
+                  className="group flex flex-col bg-surface"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <Image
+                      src={item.imageSrc}
+                      width={item.imageWidth}
+                      height={item.imageHeight}
+                      alt={item.imageAlt}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-8 sm:p-10">
+                    <p className="text-xs font-medium uppercase tracking-widest text-accent">
+                      {item.label}
+                    </p>
+                    <h3 className="mt-4 font-serif text-2xl leading-tight sm:text-3xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-muted">{item.description}</p>
+                    <p className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium">
+                      {item.ctaLabel}
+                      <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+                        →
+                      </span>
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Approach */}
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-28 sm:py-32">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             How I Work
           </p>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+          <h2 className="mt-3 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
             The workflow comes before the model.
           </h2>
           <p className="mt-5 max-w-3xl leading-relaxed text-muted">
             AI transformation succeeds when the technology fits the people,
             decisions, and constraints already inside the business.
           </p>
-          <div className="mt-12">
+          <div className="mt-14">
             <FlowSteps steps={howIWork} />
           </div>
 
-          <div className="mt-20 grid gap-10 border-t border-border/80 pt-16 lg:grid-cols-2">
+          <div className="mt-24 grid gap-10 border-t border-border/80 pt-16 lg:grid-cols-2">
             <div>
               <p className="text-sm font-medium uppercase tracking-widest text-accent">
                 About Kezia
               </p>
-              <h2 className="mt-3 font-serif text-2xl sm:text-3xl">
+              <h2 className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
                 Product leader by experience. Builder by instinct.
               </h2>
             </div>

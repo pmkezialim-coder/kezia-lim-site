@@ -31,16 +31,16 @@ export default function FlagshipCard({
   extraActions?: React.ReactNode;
 }) {
   return (
-    <div className="grid overflow-hidden rounded-3xl lg:grid-cols-[1.5fr_1fr]">
-      <div className="bg-foreground p-8 text-background sm:p-12">
+    <div className="grid overflow-hidden lg:grid-cols-[1.5fr_1fr]">
+      <div className="bg-foreground p-8 text-background sm:p-14">
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium uppercase tracking-widest text-background/55">
           <span>{kicker}</span>
           <span>{eyebrow}</span>
         </div>
-        <p className="mt-10 font-serif text-xs uppercase tracking-[0.3em] text-background/70">
+        <p className="mt-12 font-serif text-xs uppercase tracking-[0.3em] text-background/70">
           {mark}
         </p>
-        <h3 className="mt-3 max-w-lg font-serif text-3xl leading-tight sm:text-4xl">
+        <h3 className="mt-3 max-w-xl font-serif text-[clamp(1.875rem,3.2vw,3.25rem)] leading-[1.02]">
           {title}
         </h3>
         <p className="mt-5 max-w-md leading-relaxed text-background/70">{lede}</p>

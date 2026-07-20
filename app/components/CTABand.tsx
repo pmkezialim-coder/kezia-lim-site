@@ -18,14 +18,16 @@ export default function CTABand({
   if (bold) {
     return (
       <section className="bg-accent text-accent-foreground">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center sm:py-28">
-          <h2 className="font-serif text-4xl sm:text-5xl">{heading}</h2>
+        <div className="mx-auto max-w-4xl px-6 py-24 text-center sm:py-32">
+          <h2 className="font-serif text-[clamp(2.75rem,6.5vw,5.5rem)] leading-[1.02]">
+            {heading}
+          </h2>
           {body && (
-            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-accent-foreground/85">
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-accent-foreground/85">
               {body}
             </p>
           )}
-          <div className="mt-9">
+          <div className="mt-10">
             <a
               href={ctaHref}
               className="inline-flex items-center justify-center gap-1.5 rounded-full bg-accent-foreground px-6 py-3 text-sm font-medium tracking-wide text-accent transition-transform hover:-translate-y-0.5"
