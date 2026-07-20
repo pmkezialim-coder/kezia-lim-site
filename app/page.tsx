@@ -1,16 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
 import Button from "@/app/components/Button";
 import AnnotatedImage from "@/app/components/AnnotatedImage";
-import ScreenshotGallery from "@/app/components/ScreenshotGallery";
 import MetricStrip from "@/app/components/MetricStrip";
 import WorkCard from "@/app/components/WorkCard";
 import FlagshipCard from "@/app/components/FlagshipCard";
 import FlowSteps from "@/app/components/FlowSteps";
-import InsightCard from "@/app/components/InsightCard";
 import CTABand from "@/app/components/CTABand";
 import { LinkIcon, InstagramIcon, TikTokIcon } from "@/app/components/SocialIcons";
-import { site, insightsPosts } from "@/app/lib/site";
+import { site } from "@/app/lib/site";
 
 const metrics = [
   { value: "14+", label: "Years in Product & Digital Transformation" },
@@ -48,13 +44,6 @@ const secondaryWork = [
   },
 ];
 
-const recognitionCards = [
-  "Your team is experimenting with AI, but nothing is shipping.",
-  "Manual work is slowing down your business.",
-  "You have an AI idea but no clear product path.",
-  "You need someone who understands strategy and implementation.",
-];
-
 const howIWork = [
   { icon: "🔍", label: "Discover", sublabel: "Understand the real problem" },
   { icon: "🗺️", label: "Map", sublabel: "Find where AI creates value" },
@@ -62,20 +51,6 @@ const howIWork = [
   { icon: "✅", label: "Validate", sublabel: "Test with real users and workflows" },
   { icon: "🚀", label: "Implement", sublabel: "Create a practical roadmap" },
   { icon: "📈", label: "Improve", sublabel: "Measure and iterate" },
-];
-
-const principles = [
-  "People before technology",
-  "Reduce complexity, do not add to it",
-  "Ship to learn",
-  "Build trust through product decisions",
-];
-
-const currentlyBuilding = [
-  "Growing BECOME",
-  "Designing practical AI workflows",
-  "Testing new product ideas",
-  "Writing field notes about AI, product, and building",
 ];
 
 export default function Home() {
@@ -123,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Work */}
+      {/* Selected Work */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="max-w-2xl">
@@ -171,6 +146,37 @@ export default function Home() {
                 { number: "04", label: "Launch" },
               ]}
               quote="I read what the Inner Compass had written, and I cried — because it was accurate."
+              extraActions={
+                <>
+                  <a
+                    href={site.becomeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-background/25 px-4 py-2 text-sm font-medium text-background transition-colors hover:border-background/50"
+                  >
+                    <LinkIcon className="h-4 w-4" />
+                    Try BECOME
+                  </a>
+                  <a
+                    href={site.becomeInstagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="BECOME on Instagram"
+                    className="text-background/70 transition-colors hover:text-background"
+                  >
+                    <InstagramIcon />
+                  </a>
+                  <a
+                    href={site.becomeTiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="BECOME on TikTok"
+                    className="text-background/70 transition-colors hover:text-background"
+                  >
+                    <TikTokIcon />
+                  </a>
+                </>
+              }
             />
           </div>
 
@@ -182,190 +188,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* You may be here because... */}
+      {/* Approach */}
       <section>
-        <div className="mx-auto max-w-4xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">You may be here because…</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {recognitionCards.map((line) => (
-              <div
-                key={line}
-                className="rounded-2xl border border-border bg-surface p-6"
-              >
-                <p className="leading-relaxed">{line}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-8 font-serif text-xl italic text-accent">
-            That is where I help.
-          </p>
-        </div>
-      </section>
-
-      {/* How I Work */}
-      <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">How I Work</h2>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">
+            How I Work
+          </p>
+          <h2 className="mt-3 max-w-2xl font-serif text-3xl sm:text-4xl">
+            The workflow comes before the model.
+          </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+            AI transformation succeeds when the technology fits the people,
+            decisions, and constraints already inside the business.
+          </p>
           <div className="mt-12">
             <FlowSteps steps={howIWork} />
           </div>
-        </div>
-      </section>
 
-      {/* BECOME feature story */}
-      <section>
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-            {/* Copy + timeline + CTAs */}
+          <div className="mt-20 grid gap-10 border-t border-border/80 pt-16 lg:grid-cols-2">
             <div>
-              <h2 className="font-serif text-3xl sm:text-4xl">
-                Built to understand what makes AI feel human.
+              <p className="text-sm font-medium uppercase tracking-widest text-accent">
+                About Kezia
+              </p>
+              <h2 className="mt-3 font-serif text-2xl sm:text-3xl">
+                Product leader by experience. Builder by instinct.
               </h2>
-              <p className="mt-6 max-w-md leading-relaxed text-muted">
-                BECOME is the clearest proof of how I work: start with a
-                deeply human problem, define what the AI should and should
-                not do, prototype quickly, and refine through real use.
+            </div>
+            <div>
+              <p className="leading-relaxed text-muted">
+                I bring 14+ years across product and digital transformation
+                in Southeast Asia — regional launches, modernised workflows,
+                and AI products built from first sketch to working
+                prototype.
               </p>
-
-              <div className="mt-10">
-                <p className="text-xs font-medium uppercase tracking-widest text-muted">
-                  From spec to shipped
-                </p>
-                <div className="mt-4">
-                  <FlowSteps
-                    steps={[
-                      { icon: "📝", label: "PRD" },
-                      { icon: "🧪", label: "Prototype" },
-                      { icon: "🪞", label: "Personal Testing" },
-                      { icon: "🚀", label: "Launch" },
-                    ]}
-                  />
-                </div>
-              </div>
-
-              <div className="mt-10 flex flex-wrap items-center gap-5">
-                <Button href="/proof-of-work#become" variant="secondary">
-                  Read the BECOME Case Study
+              <p className="mt-4 leading-relaxed text-muted">
+                My style is practical and quietly ambitious: understand the
+                real problem, bring people with you, and make the change
+                useful enough to last.
+              </p>
+              <div className="mt-6">
+                <Button href="/about" variant="secondary">
+                  More About Me
                 </Button>
-                <a
-                  href={site.becomeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
-                >
-                  <LinkIcon className="h-4 w-4" />
-                  Try BECOME
-                </a>
-                <a
-                  href={site.becomeInstagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="BECOME on Instagram"
-                  className="text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  <InstagramIcon />
-                </a>
-                <a
-                  href={site.becomeTiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="BECOME on TikTok"
-                  className="text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  <TikTokIcon />
-                </a>
               </div>
             </div>
-
-            {/* Visuals */}
-            <div className="space-y-6">
-              <ScreenshotGallery
-                fit="contain"
-                size="lg"
-                className="flex gap-6"
-                shots={[
-                  {
-                    src: "/images/become/patterns-dark.png",
-                    width: 572,
-                    height: 1224,
-                    alt: "BECOME Pattern Dashboard in dark mode",
-                  },
-                  {
-                    src: "/images/become/inner-compass-light.png",
-                    width: 550,
-                    height: 1214,
-                    alt: "BECOME Inner Compass summary",
-                  },
-                ]}
-              />
-              <div className="aspect-video overflow-hidden rounded-2xl bg-surface">
-                <Image
-                  src="/images/become/become-founder-notebook-wireframe.jpg"
-                  width={1672}
-                  height={941}
-                  alt="Founder's notebook open to early BECOME wireframes and product notes"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Operating Principles */}
-      <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-4xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">How I think about AI products</h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {principles.map((principle) => (
-              <p key={principle} className="font-serif text-2xl leading-snug sm:text-3xl">
-                {principle}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Currently Building */}
-      <section>
-        <div className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">Currently Building</h2>
-          <ul className="mt-8 space-y-4">
-            {currentlyBuilding.map((item) => (
-              <li key={item} className="flex items-center gap-3 text-lg">
-                <span className="h-2 w-2 shrink-0 rounded-full bg-olive" aria-hidden />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Insights preview */}
-      <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="flex items-baseline justify-between">
-            <h2 className="font-serif text-3xl sm:text-4xl">Field Notes</h2>
-            <Link href="/insights" className="text-sm font-medium text-accent">
-              View all →
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-10 sm:grid-cols-3">
-            {insightsPosts.map((post) => (
-              <InsightCard
-                key={post.slug}
-                href={`/insights/${post.slug}`}
-                tag={post.tag}
-                readingTime={post.readingTime}
-                title={post.title}
-                excerpt={post.teaser}
-                assetName={post.assetName}
-                imageDescription={post.imageDescription}
-                imageSrc={post.imageSrc}
-                imageWidth={post.imageWidth}
-                imageHeight={post.imageHeight}
-              />
-            ))}
           </div>
         </div>
       </section>

@@ -15,6 +15,7 @@ export default function FlagshipCard({
   journeyLabel,
   steps,
   quote,
+  extraActions,
 }: {
   kicker: string;
   eyebrow: string;
@@ -27,6 +28,7 @@ export default function FlagshipCard({
   journeyLabel: string;
   steps: Step[];
   quote: string;
+  extraActions?: React.ReactNode;
 }) {
   return (
     <div className="grid overflow-hidden rounded-3xl lg:grid-cols-[1.5fr_1fr]">
@@ -56,13 +58,16 @@ export default function FlagshipCard({
           ))}
         </div>
 
-        <Link
-          href={ctaHref}
-          className="mt-9 inline-flex items-center gap-1.5 rounded-full bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5"
-        >
-          {ctaLabel}
-          <span aria-hidden>↗</span>
-        </Link>
+        <div className="mt-9 flex flex-wrap items-center gap-5">
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center gap-1.5 rounded-full bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5"
+          >
+            {ctaLabel}
+            <span aria-hidden>↗</span>
+          </Link>
+          {extraActions}
+        </div>
       </div>
 
       <div className="flex flex-col justify-center bg-accent p-8 text-accent-foreground sm:p-10">
