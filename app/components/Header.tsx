@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, site } from "@/app/lib/site";
+import { nav } from "@/app/lib/site";
 import ThemeToggle from "@/app/components/ThemeToggle";
 
 export default function Header() {
@@ -39,13 +39,6 @@ export default function Header() {
             );
           })}
           <ThemeToggle />
-          <a
-            href={site.discoveryCallMailto}
-            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-colors hover:brightness-90"
-          >
-            {site.ctaLabel}
-            <span aria-hidden>↗</span>
-          </a>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
@@ -74,13 +67,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={site.discoveryCallMailto}
-            className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground"
-          >
-            {site.ctaLabel}
-            <span aria-hidden>↗</span>
-          </a>
         </nav>
       )}
     </header>

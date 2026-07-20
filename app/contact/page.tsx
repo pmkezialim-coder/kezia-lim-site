@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Button from "@/app/components/Button";
 import InquiryForm from "@/app/components/InquiryForm";
+import { MailIcon, LinkedInIcon } from "@/app/components/SocialIcons";
 import { site } from "@/app/lib/site";
 
 export const metadata: Metadata = {
@@ -21,17 +22,22 @@ export default function ContactPage() {
         <Button href={site.discoveryCallMailto}>{site.ctaLabel}</Button>
       </div>
 
-      <div className="mt-12 flex flex-col items-center gap-2 text-muted">
-        <a href={`mailto:${site.email}`} className="hover:text-foreground">
-          {site.email}
+      <div className="mt-12 flex items-center justify-center gap-3">
+        <a
+          href={`mailto:${site.email}`}
+          aria-label="Email"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
+        >
+          <MailIcon />
         </a>
         <a
           href={site.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-foreground"
+          aria-label="LinkedIn"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground/70 transition-colors hover:border-foreground/40 hover:text-foreground"
         >
-          LinkedIn
+          <LinkedInIcon />
         </a>
       </div>
 

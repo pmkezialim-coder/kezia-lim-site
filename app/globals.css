@@ -15,6 +15,10 @@
   --sand: #e9dcc3;
   --warm-grey: #a49b8b;
   --olive: #6f7a4f;
+  /* Fixed, non-theme-reactive pair for surfaces that should stay dark
+     regardless of light/dark mode (e.g. footer, "ink" cards). */
+  --ink: #2b2622;
+  --ink-foreground: #f4ece0;
 }
 
 .dark {
@@ -45,6 +49,8 @@
   --color-sand: var(--sand);
   --color-warm-grey: var(--warm-grey);
   --color-olive: var(--olive);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
   --font-serif: var(--font-fraunces);
   --font-sans: var(--font-inter);
 }
