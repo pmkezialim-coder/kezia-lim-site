@@ -135,7 +135,7 @@ export default function ProofOfWorkPage() {
   return (
     <>
     <div className="px-6 pt-20 sm:pt-28">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <h1 className="font-serif text-4xl sm:text-5xl">Proof of Work</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-muted">
           A working record — one flagship product, and the experiments

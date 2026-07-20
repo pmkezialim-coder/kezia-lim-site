@@ -101,19 +101,17 @@ export default function Home() {
       {/* Selected Work */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">
-              Proof of Work
-            </p>
-            <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
-              Strategy is useful when it becomes something real.
-            </h2>
-            <p className="mt-5 leading-relaxed text-muted">
-              My work sits between business transformation, product
-              thinking, and hands-on delivery — from discovering the right
-              problem to proving a solution in the real world.
-            </p>
-          </div>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">
+            Proof of Work
+          </p>
+          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+            Strategy is useful when it becomes something real.
+          </h2>
+          <p className="mt-5 max-w-3xl leading-relaxed text-muted">
+            My work sits between business transformation, product thinking,
+            and hands-on delivery — from discovering the right problem to
+            proving a solution in the real world.
+          </p>
 
           <div className="mt-12">
             <FlagshipCard
@@ -194,10 +192,10 @@ export default function Home() {
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             How I Work
           </p>
-          <h2 className="mt-3 max-w-2xl font-serif text-3xl sm:text-4xl">
+          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
             The workflow comes before the model.
           </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-muted">
+          <p className="mt-5 max-w-3xl leading-relaxed text-muted">
             AI transformation succeeds when the technology fits the people,
             decisions, and constraints already inside the business.
           </p>
