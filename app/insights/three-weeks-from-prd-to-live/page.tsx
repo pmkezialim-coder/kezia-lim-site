@@ -11,7 +11,7 @@ export default function Post() {
       <Link href="/insights" className="text-sm text-muted hover:text-foreground">
         ← Insights
       </Link>
-      <h1 className="mt-4 font-serif text-4xl">Three Weeks From PRD to Live</h1>
+      <h1 className="mt-4 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">Three Weeks From PRD to Live</h1>
       <p className="mt-3 text-muted">
         What shipping BECOME solo taught me about my own pace.
       </p>
@@ -59,11 +59,11 @@ export default function Post() {
       </div>
 
       <div className="mt-10 space-y-3 border-t border-border/80 pt-10">
-        <p className="font-serif text-xl italic sm:text-2xl">
+        <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed">
           Sometimes the product you&apos;re building also reshapes the
           person building it.
         </p>
-        <p className="font-serif text-xl italic text-accent sm:text-2xl">
+        <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed text-accent">
           And for me, that&apos;s the clearest sign that BECOME is
           becoming what I hoped it could be.
         </p>

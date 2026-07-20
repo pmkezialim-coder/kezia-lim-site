@@ -136,7 +136,7 @@ export default function ProofOfWorkPage() {
     <>
     <div className="px-6 pt-20 sm:pt-28">
       <div className="mx-auto max-w-6xl">
-        <h1 className="font-serif text-4xl sm:text-5xl">Proof of Work</h1>
+        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">Proof of Work</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-muted">
           A working record — one flagship product, and the experiments
           alongside it.
@@ -155,7 +155,7 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Flagship Case Study
         </p>
-        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">BECOME</h2>
+        <h2 className="mt-3 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">BECOME</h2>
 
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <a
@@ -327,7 +327,7 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Government Transformation
         </p>
-        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">AI for Public Services</h2>
+        <h2 className="mt-3 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">AI for Public Services</h2>
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
           <Image
             src="/images/become/public-services-workflow-diagram.jpg"
@@ -375,14 +375,14 @@ export default function ProofOfWorkPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Builder Experiments
         </p>
-        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">Rapid AI Prototypes</h2>
+        <h2 className="mt-3 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">Rapid AI Prototypes</h2>
         <p className="mt-4 max-w-xl leading-relaxed text-muted">
           From appointment assistants to workflow automation — practical AI
           concepts built and tested quickly.
         </p>
 
         <div id="appointment-assistant" className="mt-12 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-serif text-xl">AI Appointment Assistant</h3>
+          <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">AI Appointment Assistant</h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
             <div>
               <dt className="text-xs font-medium uppercase tracking-wide text-accent">
@@ -423,7 +423,7 @@ export default function ProofOfWorkPage() {
         </div>
 
         <div id="chatbots" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-serif text-xl">
+          <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">
             Conversational AI & Digital Assistants
           </h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
@@ -499,7 +499,7 @@ export default function ProofOfWorkPage() {
         </div>
 
         <div id="hackathons" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
-          <h3 className="font-serif text-xl">Rapid AI Innovation</h3>
+          <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">Rapid AI Innovation</h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
             <div>
               <dt className="text-xs font-medium uppercase tracking-wide text-accent">

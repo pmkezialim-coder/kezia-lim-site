@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       {/* Opening statement */}
       <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28">
-        <h1 className="font-serif text-4xl leading-tight sm:text-5xl">
+        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           I didn&apos;t start in AI. I started by solving operational
           problems.
         </h1>
@@ -97,7 +97,7 @@ export default function AboutPage() {
       {/* Current focus */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <p className="font-serif text-2xl italic">
+          <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed">
             Right now: growing BECOME, and bringing what it teaches me
             straight into client work.
           </p>

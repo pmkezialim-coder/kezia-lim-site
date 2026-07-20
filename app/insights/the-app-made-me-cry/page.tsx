@@ -11,7 +11,7 @@ export default function Post() {
       <Link href="/insights" className="text-sm text-muted hover:text-foreground">
         ← Insights
       </Link>
-      <h1 className="mt-4 font-serif text-4xl">The App Made Me Cry</h1>
+      <h1 className="mt-4 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">The App Made Me Cry</h1>
       <p className="mt-3 text-muted">
         What two days of debugging the Inner Compass taught me about rest.
       </p>
@@ -61,7 +61,7 @@ export default function Post() {
       </div>
 
       <div className="mt-10 border-t border-border/80 pt-10">
-        <p className="font-serif text-xl italic text-accent sm:text-2xl">
+        <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed text-accent">
           That&apos;s the standard I now want every AI product I build to
           reach.
         </p>

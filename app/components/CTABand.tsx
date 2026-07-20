@@ -44,7 +44,7 @@ export default function CTABand({
   return (
     <section className={tinted ? "border-t border-border/80 bg-surface" : "border-t border-border/80"}>
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2 className="font-serif text-3xl sm:text-4xl">{heading}</h2>
+        <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">{heading}</h2>
         {body && (
           <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted">{body}</p>
         )}

@@ -51,7 +51,7 @@ export default function WorkCard({
       <p className="mt-5 text-xs font-medium uppercase tracking-widest text-accent">
         {label}
       </p>
-      <h3 className="mt-2 font-serif text-2xl">{title}</h3>
+      <h3 className="mt-2 font-serif text-[clamp(1.5rem,2.2vw,1.875rem)] leading-tight">{title}</h3>
       <p className="mt-2 leading-relaxed text-muted">{description}</p>
       <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
         {ctaLabel}

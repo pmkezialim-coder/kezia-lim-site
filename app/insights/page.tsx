@@ -28,7 +28,7 @@ export default function InsightsPage() {
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Field Notes
         </p>
-        <h1 className="mt-3 font-serif text-4xl sm:text-5xl">
+        <h1 className="mt-3 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           Lessons from building AI products, transforming workflows, and
           learning in public.
         </h1>
@@ -67,7 +67,7 @@ export default function InsightsPage() {
                   <span aria-hidden>·</span>
                   <span>{featured.readingTime}</span>
                 </div>
-                <h2 className="mt-4 font-serif text-3xl sm:text-4xl">{featured.title}</h2>
+                <h2 className="mt-4 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">{featured.title}</h2>
                 <p className="mt-3 leading-relaxed text-muted">{featured.teaser}</p>
                 <p className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium">
                   Read the story
@@ -111,7 +111,7 @@ export default function InsightsPage() {
                     <span aria-hidden>·</span>
                     <span>{post.readingTime}</span>
                   </div>
-                  <h3 className="mt-2 font-serif text-xl">{post.title}</h3>
+                  <h3 className="mt-2 font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">{post.title}</h3>
                   <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted">
                     {post.teaser}
                   </p>
@@ -123,7 +123,7 @@ export default function InsightsPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-16">
-        <h2 className="font-serif text-2xl">More Topics, Coming Soon</h2>
+        <h2 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">More Topics, Coming Soon</h2>
         <ul className="mt-6 space-y-3 text-muted">
           {moreTopics.map((topic) => (
             <li key={topic} className="flex gap-3">

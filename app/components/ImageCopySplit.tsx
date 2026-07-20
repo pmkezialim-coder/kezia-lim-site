@@ -66,7 +66,7 @@ export default function ImageCopySplit({
             {eyebrow}
           </p>
         )}
-        <h2 className={`font-serif text-3xl sm:text-4xl ${eyebrow ? "mt-3" : ""}`}>
+        <h2 className={`font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1] ${eyebrow ? "mt-3" : ""}`}>
           {title}
         </h2>
         <p className="mt-5 max-w-lg leading-relaxed text-muted">{body}</p>

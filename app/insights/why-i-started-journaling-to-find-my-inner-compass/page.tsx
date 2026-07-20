@@ -11,7 +11,7 @@ export default function Post() {
       <Link href="/insights" className="text-sm text-muted hover:text-foreground">
         ← Insights
       </Link>
-      <h1 className="mt-4 font-serif text-4xl">
+      <h1 className="mt-4 font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
         Why I Started Journaling to Find My Inner Compass
       </h1>
       <p className="mt-3 text-muted">The 37-year story behind BECOME.</p>
@@ -60,10 +60,10 @@ export default function Post() {
       </div>
 
       <div className="mt-10 space-y-3 border-t border-border/80 pt-10">
-        <p className="font-serif text-xl italic sm:text-2xl">
+        <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed">
           Not an AI that tells you who you should become.
         </p>
-        <p className="font-serif text-xl italic text-accent sm:text-2xl">
+        <p className="font-serif text-[clamp(1.25rem,2vw,1.5rem)] italic leading-relaxed text-accent">
           A companion that helps you notice who you&apos;re already
           becoming.
         </p>

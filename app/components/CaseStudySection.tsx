@@ -11,7 +11,7 @@ export default function CaseStudySection({
     <section className="grid gap-4 border-t border-border/80 py-12 sm:grid-cols-[auto_1fr] sm:gap-10">
       <div className="flex items-baseline gap-3 sm:block">
         <span className="font-serif text-sm text-clay">{number}</span>
-        <h3 className="font-serif text-xl sm:mt-1 sm:w-40">{title}</h3>
+        <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug sm:mt-1 sm:w-40">{title}</h3>
       </div>
       <div className="max-w-2xl leading-relaxed text-muted">{children}</div>
     </section>

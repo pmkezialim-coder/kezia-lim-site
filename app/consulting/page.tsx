@@ -53,7 +53,7 @@ export default function ConsultingPage() {
     <>
       {/* Hero */}
       <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28">
-        <h1 className="font-serif text-4xl sm:text-5xl">
+        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           From AI curiosity to practical capability.
         </h1>
       </section>
@@ -61,7 +61,7 @@ export default function ConsultingPage() {
       {/* Problems */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-3xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">Sound familiar?</h2>
+          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">Sound familiar?</h2>
           <ul className="mt-8 space-y-4">
             {problems.map((quote) => (
               <li
@@ -77,7 +77,7 @@ export default function ConsultingPage() {
 
       {/* Outcomes */}
       <section className="mx-auto max-w-3xl px-6 py-24">
-        <h2 className="font-serif text-3xl sm:text-4xl">What you leave with</h2>
+        <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">What you leave with</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {outcomes.map((outcome) => (
             <p key={outcome} className="font-serif text-xl leading-snug">
@@ -90,7 +90,7 @@ export default function ConsultingPage() {
       {/* Visual process */}
       <section className="border-t border-border/80 bg-surface">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <h2 className="font-serif text-3xl sm:text-4xl">How I Work</h2>
+          <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">How I Work</h2>
           <div className="mt-10">
             <FlowSteps
               steps={[
@@ -108,11 +108,11 @@ export default function ConsultingPage() {
 
       {/* Engagement options */}
       <section className="mx-auto max-w-5xl px-6 py-24">
-        <h2 className="font-serif text-3xl sm:text-4xl">Ways to work together</h2>
+        <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">Ways to work together</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-3">
           {engagements.map((e) => (
             <div key={e.title} className="rounded-2xl border border-border p-6">
-              <h3 className="font-serif text-xl">{e.title}</h3>
+              <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">{e.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{e.description}</p>
 
               <dl className="mt-6 space-y-4 text-sm">
@@ -146,7 +146,7 @@ export default function ConsultingPage() {
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             Selected Example
           </p>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">BECOME</h2>
+          <h2 className="mt-3 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">BECOME</h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted">
             This exact process, applied to my own idea: PRD to live AI
             product in three weeks. It&apos;s the clearest proof I have that

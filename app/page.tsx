@@ -186,7 +186,7 @@ export default function Home() {
                     <p className="text-xs font-medium uppercase tracking-widest text-accent">
                       {item.label}
                     </p>
-                    <h3 className="mt-4 font-serif text-2xl leading-tight sm:text-3xl">
+                    <h3 className="mt-4 font-serif text-[clamp(1.5rem,2.2vw,1.875rem)] leading-tight">
                       {item.title}
                     </h3>
                     <p className="mt-3 leading-relaxed text-muted">{item.description}</p>
@@ -226,7 +226,7 @@ export default function Home() {
               <p className="text-sm font-medium uppercase tracking-widest text-accent">
                 About Kezia
               </p>
-              <h2 className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
+              <h2 className="mt-3 font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">
                 Product leader by experience. Builder by instinct.
               </h2>
             </div>
