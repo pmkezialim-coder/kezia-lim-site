@@ -21,8 +21,8 @@ export default function AboutPage() {
   return (
     <>
       {/* Opening statement */}
-      <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28">
-        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28">
+        <h1 className="max-w-3xl font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           I didn&apos;t start in AI. I started by solving operational
           problems.
         </h1>
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
       {/* Career timeline */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 py-16">
           <p className="text-sm font-medium uppercase tracking-widest text-muted">
             14+ Years
           </p>
@@ -47,7 +47,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why I build this way */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="mx-auto max-w-6xl px-6 py-24">
         <ImageCopySplit
           eyebrow="Why AI"
           title="Why I build this way"
@@ -63,7 +63,7 @@ export default function AboutPage() {
 
       {/* BECOME founder story */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <ImageCopySplit
             eyebrow="Why BECOME Exists"
             title="Built from lived truth, not theory"
@@ -80,7 +80,7 @@ export default function AboutPage() {
       </section>
 
       {/* Personal discipline */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="mx-auto max-w-6xl px-6 py-24">
         <ImageCopySplit
           eyebrow="Outside Work"
           title="Muay Thai, running, and consistency"

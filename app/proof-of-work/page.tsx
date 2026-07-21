@@ -134,8 +134,8 @@ const screenshots = [
 export default function ProofOfWorkPage() {
   return (
     <>
-    <div className="px-6 pt-20 sm:pt-28">
-      <div className="mx-auto max-w-6xl">
+    <div className="pt-20 sm:pt-28">
+      <div className="mx-auto max-w-6xl px-6">
         <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">Proof of Work</h1>
         <p className="mt-6 max-w-xl leading-relaxed text-muted">
           A working record — one flagship product, and the experiments
@@ -144,14 +144,14 @@ export default function ProofOfWorkPage() {
       </div>
 
       {/* Overview grid */}
-      <div className="mx-auto mt-16 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-16 grid max-w-6xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-3">
         {overview.map((item) => (
           <WorkCard key={item.title} {...item} />
         ))}
       </div>
 
       {/* BECOME flagship case study */}
-      <section id="become" className="mx-auto mt-28 max-w-4xl scroll-mt-24">
+      <section id="become" className="mx-auto mt-28 max-w-6xl scroll-mt-24 px-6">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Flagship Case Study
         </p>
@@ -323,7 +323,7 @@ export default function ProofOfWorkPage() {
       </section>
 
       {/* AI for Public Services */}
-      <section id="public-services" className="mx-auto mt-28 max-w-4xl scroll-mt-24 border-t border-border/80 pt-16">
+      <section id="public-services" className="mx-auto mt-28 max-w-6xl scroll-mt-24 border-t border-border/80 px-6 pt-16">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Government Transformation
         </p>
@@ -337,7 +337,7 @@ export default function ProofOfWorkPage() {
             className="h-auto w-full"
           />
         </div>
-        <dl className="mt-8 space-y-5 text-sm leading-relaxed">
+        <dl className="mt-8 max-w-2xl space-y-5 text-sm leading-relaxed">
           <div>
             <dt className="text-xs font-medium uppercase tracking-wide text-accent">
               Challenge
@@ -371,7 +371,7 @@ export default function ProofOfWorkPage() {
       </section>
 
       {/* Builder experiments */}
-      <section id="experiments" className="mx-auto mt-28 max-w-4xl scroll-mt-24 border-t border-border/80 pt-16">
+      <section id="experiments" className="mx-auto mt-28 max-w-6xl scroll-mt-24 border-t border-border/80 px-6 pt-16">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Builder Experiments
         </p>
@@ -381,7 +381,7 @@ export default function ProofOfWorkPage() {
           concepts built and tested quickly.
         </p>
 
-        <div id="appointment-assistant" className="mt-12 scroll-mt-24 rounded-2xl border border-border p-6">
+        <div id="appointment-assistant" className="mt-12 max-w-3xl scroll-mt-24 rounded-2xl border border-border p-6">
           <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">AI Appointment Assistant</h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
             <div>
@@ -422,7 +422,7 @@ export default function ProofOfWorkPage() {
           </dl>
         </div>
 
-        <div id="chatbots" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
+        <div id="chatbots" className="mt-6 max-w-3xl scroll-mt-24 rounded-2xl border border-border p-6">
           <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">
             Conversational AI & Digital Assistants
           </h3>
@@ -498,7 +498,7 @@ export default function ProofOfWorkPage() {
           </div>
         </div>
 
-        <div id="hackathons" className="mt-6 scroll-mt-24 rounded-2xl border border-border p-6">
+        <div id="hackathons" className="mt-6 max-w-3xl scroll-mt-24 rounded-2xl border border-border p-6">
           <h3 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">Rapid AI Innovation</h3>
           <dl className="mt-5 space-y-4 text-sm leading-relaxed">
             <div>
@@ -536,6 +536,7 @@ export default function ProofOfWorkPage() {
 
       <div className="pb-24" />
     </div>
+
 
     <CTABand
       heading="Have a project worth building this way?"

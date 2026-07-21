@@ -24,7 +24,7 @@ export default function InsightsPage() {
 
   return (
     <>
-      <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28">
         <p className="text-sm font-medium uppercase tracking-widest text-accent">
           Field Notes
         </p>
@@ -122,9 +122,9 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="font-serif text-[clamp(1.25rem,1.8vw,1.5rem)] leading-snug">More Topics, Coming Soon</h2>
-        <ul className="mt-6 space-y-3 text-muted">
+        <ul className="mt-6 max-w-2xl space-y-3 text-muted">
           {moreTopics.map((topic) => (
             <li key={topic} className="flex gap-3">
               <span className="text-accent">—</span>

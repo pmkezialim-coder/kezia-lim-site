@@ -52,17 +52,17 @@ export default function ConsultingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-3xl px-6 pt-20 pb-16 sm:pt-28">
-        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28">
+        <h1 className="max-w-3xl font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           From AI curiosity to practical capability.
         </h1>
       </section>
 
       {/* Problems */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-3xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">Sound familiar?</h2>
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-8 max-w-2xl space-y-4">
             {problems.map((quote) => (
               <li
                 key={quote}
@@ -76,7 +76,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* Outcomes */}
-      <section className="mx-auto max-w-3xl px-6 py-24">
+      <section className="mx-auto max-w-6xl px-6 py-24">
         <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">What you leave with</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {outcomes.map((outcome) => (
@@ -89,7 +89,7 @@ export default function ConsultingPage() {
 
       {/* Visual process */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">How I Work</h2>
           <div className="mt-10">
             <FlowSteps
@@ -107,7 +107,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* Engagement options */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="mx-auto max-w-6xl px-6 py-24">
         <h2 className="font-serif text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.1]">Ways to work together</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-3">
           {engagements.map((e) => (
@@ -142,7 +142,7 @@ export default function ConsultingPage() {
 
       {/* Selected example */}
       <section className="border-t border-border/80 bg-surface">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
             Selected Example
           </p>
