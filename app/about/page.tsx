@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       {/* Opening statement */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 sm:pt-28">
-        <h1 className="max-w-3xl font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
+        <h1 className="font-serif text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05]">
           I didn&apos;t start in AI. I started by solving operational
           problems.
         </h1>
